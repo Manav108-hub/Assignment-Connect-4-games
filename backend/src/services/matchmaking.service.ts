@@ -7,54 +7,50 @@ import { logger } from '../utils/logger';
 interface WaitingPlayer {
   player: Player;
   timeout: NodeJS.Timeout;
+  socketId: string;
 }
 
 class MatchmakingService {
   private waitingPlayers: Map<string, WaitingPlayer> = new Map();
 
-  addPlayerToQueue(player: Player): string | null {
+  addPlayerToQueue(
+    player: Player, 
+    onBotMatch?: (player: Player) => void
+  ): { type: 'player_match' | 'waiting' | null; waitingPlayer?: Player } {
     // Check if there's already a waiting player
     const waitingEntry = Array.from(this.waitingPlayers.values())[0];
 
     if (waitingEntry && waitingEntry.player.id !== player.id) {
-      // Match found! Clear timeout and create game
+      // Match found! Clear timeout and return both players
       clearTimeout(waitingEntry.timeout);
-      this.waitingPlayers.delete(waitingEntry.player.socketId);
+      this.waitingPlayers.delete(waitingEntry.socketId);
 
-      const game = gameService.createGame(waitingEntry.player);
-      gameService.joinGame(game.id, player);
-
-      logger.info(`Matched players: ${waitingEntry.player.username} vs ${player.username}`);
-      return game.id;
+      logger.info(`✅ Matched players: ${waitingEntry.player.username} vs ${player.username}`);
+      
+      return { 
+        type: 'player_match', 
+        waitingPlayer: waitingEntry.player 
+      };
     }
 
     // No match found, add to queue and set timeout for bot
     const timeout = setTimeout(() => {
-      this.matchWithBot(player);
+      const entry = this.waitingPlayers.get(player.socketId);
+      if (entry && onBotMatch) {
+        this.waitingPlayers.delete(player.socketId);
+        logger.info(`⏰ Timeout reached for ${player.username}, calling bot match callback`);
+        onBotMatch(player);
+      }
     }, config.game.matchmakingTimeout);
 
-    this.waitingPlayers.set(player.socketId, { player, timeout });
-    logger.info(`Player ${player.username} added to matchmaking queue`);
-    return null;
-  }
-
-  private matchWithBot(player: Player): void {
-    const waitingEntry = this.waitingPlayers.get(player.socketId);
-    if (!waitingEntry) return;
-
-    this.waitingPlayers.delete(player.socketId);
-
-    const bot: Player = {
-      id: uuidv4(),
-      username: 'Bot',
-      socketId: 'bot',
-      isBot: true,
-    };
-
-    const game = gameService.createGame(player);
-    gameService.joinGame(game.id, bot);
-
-    logger.info(`Player ${player.username} matched with bot`);
+    this.waitingPlayers.set(player.socketId, { 
+      player, 
+      timeout,
+      socketId: player.socketId 
+    });
+    
+    logger.info(`➕ Player ${player.username} added to matchmaking queue`);
+    return { type: 'waiting' };
   }
 
   removePlayerFromQueue(socketId: string): void {
@@ -62,7 +58,7 @@ class MatchmakingService {
     if (waitingEntry) {
       clearTimeout(waitingEntry.timeout);
       this.waitingPlayers.delete(socketId);
-      logger.info(`Player removed from matchmaking queue`);
+      logger.info(`➖ Player removed from matchmaking queue`);
     }
   }
 

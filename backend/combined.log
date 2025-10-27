@@ -180,3 +180,405 @@ The table `public.Player` does not exist in the current database.
 2025-10-27 16:24:45 [INFO]: Shutting down server...
 2025-10-27 16:24:45 [INFO]: HTTP server closed
 2025-10-27 16:24:45 [INFO]: Database disconnected
+2025-10-27 17:08:01 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:08:01 [INFO]: ✅ Database connected successfully
+2025-10-27 17:08:01 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:08:01 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:08:01 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:08:31 [INFO]: New connection: G2f4EJV96qIhis3XAAAB from ::1
+2025-10-27 17:08:31 [INFO]: Client connected: G2f4EJV96qIhis3XAAAB
+2025-10-27 17:08:31 [INFO]: Player manav added to matchmaking queue
+2025-10-27 17:08:41 [INFO]: Game created: 676afbeb-f329-4cab-a3df-d3579f61e628 by player manav
+2025-10-27 17:08:41 [INFO]: Player Bot joined game 676afbeb-f329-4cab-a3df-d3579f61e628
+2025-10-27 17:08:41 [INFO]: Player manav matched with bot
+2025-10-27 17:11:25 [INFO]: Client disconnected: G2f4EJV96qIhis3XAAAB
+2025-10-27 17:11:25 [INFO]: Client disconnected: G2f4EJV96qIhis3XAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:11:45 [INFO]: Shutting down server...
+2025-10-27 17:11:45 [INFO]: HTTP server closed
+2025-10-27 17:11:45 [INFO]: Shutting down server...
+2025-10-27 17:11:45 [INFO]: HTTP server closed
+2025-10-27 17:13:15 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:13:15 [INFO]: ✅ Database connected successfully
+2025-10-27 17:13:15 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:13:15 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:13:15 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:13:20 [INFO]: New connection: JWlWg7-hnSfxun9KAAAB from ::1
+2025-10-27 17:13:20 [INFO]: Client connected: JWlWg7-hnSfxun9KAAAB
+2025-10-27 17:13:20 [INFO]: Player manav added to matchmaking queue
+2025-10-27 17:13:30 [INFO]: Game created: 5ab79bae-97de-478d-9590-36e338c19040 by player manav
+2025-10-27 17:13:30 [INFO]: Player Bot joined game 5ab79bae-97de-478d-9590-36e338c19040
+2025-10-27 17:13:30 [INFO]: Player manav matched with bot - Game ID: 5ab79bae-97de-478d-9590-36e338c19040
+2025-10-27 17:13:30 [INFO]: Player manav already matched, skipping bot match
+2025-10-27 17:14:24 [INFO]: Shutting down server...
+2025-10-27 17:14:24 [INFO]: Database disconnected
+2025-10-27 17:14:25 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:14:25 [INFO]: ✅ Database connected successfully
+2025-10-27 17:14:25 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:14:25 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:14:25 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:14:27 [INFO]: New connection: cX3_j7rIFU0mbBslAAAB from ::1
+2025-10-27 17:14:27 [INFO]: Client connected: cX3_j7rIFU0mbBslAAAB
+2025-10-27 17:14:30 [INFO]: Shutting down server...
+2025-10-27 17:14:30 [INFO]: Database disconnected
+2025-10-27 17:14:30 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:14:30 [INFO]: ✅ Database connected successfully
+2025-10-27 17:14:30 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:14:30 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:14:30 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:14:31 [INFO]: New connection: j_XrXC38NzcIaZUtAAAB from ::1
+2025-10-27 17:14:31 [INFO]: Client connected: j_XrXC38NzcIaZUtAAAB
+2025-10-27 17:14:50 [INFO]: Client disconnected: j_XrXC38NzcIaZUtAAAB
+2025-10-27 17:14:50 [INFO]: Client disconnected: j_XrXC38NzcIaZUtAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:16:03 [INFO]: Shutting down server...
+2025-10-27 17:16:03 [INFO]: HTTP server closed
+2025-10-27 17:16:03 [INFO]: Database disconnected
+2025-10-27 17:16:03 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:16:03 [INFO]: ✅ Database connected successfully
+2025-10-27 17:16:03 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:16:03 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:16:03 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:16:40 [INFO]: Shutting down server...
+2025-10-27 17:16:40 [INFO]: HTTP server closed
+2025-10-27 17:16:40 [INFO]: Database disconnected
+2025-10-27 17:18:02 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:18:02 [INFO]: ✅ Database connected successfully
+2025-10-27 17:18:02 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:18:02 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:18:02 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:18:10 [INFO]: New connection: 7_akxpvS47WisYsEAAAB from ::1
+2025-10-27 17:18:10 [INFO]: Client connected: 7_akxpvS47WisYsEAAAB
+2025-10-27 17:18:10 [INFO]: Player manav added to matchmaking queue
+2025-10-27 17:18:10 [INFO]: manav added to queue, waiting for opponent or bot...
+2025-10-27 17:18:20 [INFO]: Timeout reached for manav, calling bot match callback
+2025-10-27 17:18:20 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:18:20 [INFO]: Game created: dea4c825-fda7-4af3-b612-4ad5d5289e3f by player manav
+2025-10-27 17:18:20 [INFO]: Player Bot joined game dea4c825-fda7-4af3-b612-4ad5d5289e3f
+2025-10-27 17:18:20 [INFO]: ✅ Bot game emitted to manav: dea4c825-fda7-4af3-b612-4ad5d5289e3f
+2025-10-27 17:18:34 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:18:38 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:18:40 [DEBUG]: Bot creating opportunity at column 3
+2025-10-27 17:18:43 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:18:45 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:18:48 [DEBUG]: Bot blocking opponent at column 1
+2025-10-27 17:18:50 [DEBUG]: Bot blocking opponent at column 0
+2025-10-27 17:18:55 [DEBUG]: Bot blocking opponent at column 2
+2025-10-27 17:18:58 [DEBUG]: Bot creating opportunity at column 1
+2025-10-27 17:19:01 [DEBUG]: Bot blocking opponent at column 4
+2025-10-27 17:19:06 [INFO]: Game dea4c825-fda7-4af3-b612-4ad5d5289e3f won by manav
+2025-10-27 17:19:11 [INFO]: Game dea4c825-fda7-4af3-b612-4ad5d5289e3f deleted
+2025-10-27 17:24:05 [INFO]: Client disconnected: 7_akxpvS47WisYsEAAAB
+2025-10-27 17:24:05 [INFO]: Client disconnected: 7_akxpvS47WisYsEAAAB (anonymous) - Reason: transport close
+2025-10-27 17:25:04 [INFO]: New connection: 5m_N1F7SDNv0FtB9AAAD from ::1
+2025-10-27 17:25:04 [INFO]: Client connected: 5m_N1F7SDNv0FtB9AAAD
+2025-10-27 17:25:04 [INFO]: Player kira added to matchmaking queue
+2025-10-27 17:25:04 [INFO]: kira added to queue, waiting for opponent or bot...
+2025-10-27 17:25:12 [INFO]: New connection: qPOWuSQemnrXbZ1pAAAF from ::1
+2025-10-27 17:25:12 [INFO]: Client connected: qPOWuSQemnrXbZ1pAAAF
+2025-10-27 17:25:12 [INFO]: Matched players: kira vs manav
+2025-10-27 17:25:12 [INFO]: manav matched with another player, creating game...
+2025-10-27 17:27:12 [INFO]: Client disconnected: 5m_N1F7SDNv0FtB9AAAD
+2025-10-27 17:27:12 [INFO]: Client disconnected: 5m_N1F7SDNv0FtB9AAAD (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:27:17 [INFO]: Client disconnected: qPOWuSQemnrXbZ1pAAAF
+2025-10-27 17:27:17 [INFO]: Client disconnected: qPOWuSQemnrXbZ1pAAAF (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:27:25 [INFO]: New connection: DIFTxTg3xdxzyVdBAAAH from ::1
+2025-10-27 17:27:25 [INFO]: Client connected: DIFTxTg3xdxzyVdBAAAH
+2025-10-27 17:27:25 [INFO]: Player manav added to matchmaking queue
+2025-10-27 17:27:25 [INFO]: manav added to queue, waiting for opponent or bot...
+2025-10-27 17:27:35 [INFO]: Timeout reached for manav, calling bot match callback
+2025-10-27 17:27:35 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:27:35 [INFO]: Game created: 82d0c956-fbff-407c-b273-a78fb1d0f295 by player manav
+2025-10-27 17:27:35 [INFO]: Player Bot joined game 82d0c956-fbff-407c-b273-a78fb1d0f295
+2025-10-27 17:27:35 [INFO]: ✅ Bot game emitted to manav: 82d0c956-fbff-407c-b273-a78fb1d0f295
+2025-10-27 17:27:44 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:27:51 [INFO]: Client disconnected: DIFTxTg3xdxzyVdBAAAH
+2025-10-27 17:27:51 [INFO]: Client disconnected: DIFTxTg3xdxzyVdBAAAH (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:28:20 [INFO]: Game 82d0c956-fbff-407c-b273-a78fb1d0f295 forfeited by player c52eea26-1c9f-4d07-a33f-a81c2d9f475f
+2025-10-27 17:30:03 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:30:03 [INFO]: ✅ Database connected successfully
+2025-10-27 17:30:03 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:30:03 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:30:03 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:30:30 [INFO]: Shutting down server...
+2025-10-27 17:30:30 [INFO]: HTTP server closed
+2025-10-27 17:30:30 [INFO]: Database disconnected
+2025-10-27 17:31:54 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:31:54 [INFO]: ✅ Database connected successfully
+2025-10-27 17:31:54 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:31:54 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:31:54 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:32:22 [INFO]: Shutting down server...
+2025-10-27 17:32:22 [INFO]: HTTP server closed
+2025-10-27 17:32:22 [INFO]: Database disconnected
+2025-10-27 17:32:22 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:32:22 [INFO]: ✅ Database connected successfully
+2025-10-27 17:32:22 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:32:22 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:32:22 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:32:26 [INFO]: Shutting down server...
+2025-10-27 17:32:26 [INFO]: HTTP server closed
+2025-10-27 17:32:26 [INFO]: Shutting down server...
+2025-10-27 17:32:26 [INFO]: HTTP server closed
+2025-10-27 17:32:30 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:32:30 [INFO]: ✅ Database connected successfully
+2025-10-27 17:32:30 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:32:30 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:32:30 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:32:37 [INFO]: New connection: zQt13yQDcAI8GI03AAAB from ::1
+2025-10-27 17:32:37 [INFO]: Client connected: zQt13yQDcAI8GI03AAAB
+2025-10-27 17:32:37 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:32:37 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:32:47 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:32:47 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:32:47 [INFO]: Game created: cb99782f-fae2-4f55-899c-2a6c84e5df7e by player manav
+2025-10-27 17:32:47 [INFO]: Player Bot joined game cb99782f-fae2-4f55-899c-2a6c84e5df7e
+2025-10-27 17:32:47 [INFO]: ✅ Bot game emitted to manav: cb99782f-fae2-4f55-899c-2a6c84e5df7e
+2025-10-27 17:32:53 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:32:54 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:32:55 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:32:57 [DEBUG]: Bot blocking opponent at column 2
+2025-10-27 17:32:58 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:33:00 [DEBUG]: Bot choosing strategic column 2
+2025-10-27 17:33:03 [DEBUG]: Bot creating opportunity at column 2
+2025-10-27 17:33:09 [DEBUG]: Bot creating opportunity at column 4
+2025-10-27 17:33:12 [DEBUG]: Bot choosing winning move: column 5
+2025-10-27 17:33:12 [INFO]: Game cb99782f-fae2-4f55-899c-2a6c84e5df7e won by Bot
+2025-10-27 17:36:08 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 17:36:08 [INFO]: ✅ Database connected successfully
+2025-10-27 17:36:08 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 17:36:08 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 17:36:08 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 17:36:13 [INFO]: New connection: I7h46Pvl56UaFVpHAAAB from ::1
+2025-10-27 17:36:13 [INFO]: Client connected: I7h46Pvl56UaFVpHAAAB
+2025-10-27 17:36:52 [INFO]: Client disconnected: I7h46Pvl56UaFVpHAAAB
+2025-10-27 17:36:52 [INFO]: Client disconnected: I7h46Pvl56UaFVpHAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:37:00 [INFO]: New connection: Dn8p9fMhu7c4hnEGAAAD from ::1
+2025-10-27 17:37:00 [INFO]: Client connected: Dn8p9fMhu7c4hnEGAAAD
+2025-10-27 17:37:00 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:37:00 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:37:03 [INFO]: Client disconnected: Dn8p9fMhu7c4hnEGAAAD
+2025-10-27 17:37:03 [INFO]: ➖ Player removed from matchmaking queue
+2025-10-27 17:37:03 [INFO]: Client disconnected: Dn8p9fMhu7c4hnEGAAAD (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:38:51 [INFO]: New connection: 8ffDsUeISloet0j3AAAF from ::1
+2025-10-27 17:38:51 [INFO]: Client connected: 8ffDsUeISloet0j3AAAF
+2025-10-27 17:38:51 [INFO]: ➕ Player Kira added to matchmaking queue
+2025-10-27 17:38:51 [INFO]: ⏳ Kira waiting for opponent...
+2025-10-27 17:38:53 [INFO]: New connection: QIRStsJfb63h6AOkAAAH from ::1
+2025-10-27 17:38:53 [INFO]: Client connected: QIRStsJfb63h6AOkAAAH
+2025-10-27 17:38:53 [INFO]: ✅ Matched players: Kira vs manav
+2025-10-27 17:38:53 [INFO]: Game created: 37ce4707-bab5-4cb5-99fa-8c422639e264 by player Kira
+2025-10-27 17:38:53 [INFO]: Player manav joined game 37ce4707-bab5-4cb5-99fa-8c422639e264
+2025-10-27 17:38:53 [INFO]: ✅ PvP game started: 37ce4707-bab5-4cb5-99fa-8c422639e264 - Kira vs manav
+2025-10-27 17:39:31 [INFO]: Client disconnected: QIRStsJfb63h6AOkAAAH
+2025-10-27 17:39:31 [INFO]: Client disconnected: QIRStsJfb63h6AOkAAAH (anonymous) - Reason: transport close
+2025-10-27 17:39:35 [INFO]: Client disconnected: 8ffDsUeISloet0j3AAAF
+2025-10-27 17:39:35 [INFO]: Client disconnected: 8ffDsUeISloet0j3AAAF (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:39:43 [INFO]: New connection: LfBkBXCN5ErQNaqZAAAJ from ::1
+2025-10-27 17:39:43 [INFO]: Client connected: LfBkBXCN5ErQNaqZAAAJ
+2025-10-27 17:39:43 [INFO]: ➕ Player Kira added to matchmaking queue
+2025-10-27 17:39:43 [INFO]: ⏳ Kira waiting for opponent...
+2025-10-27 17:39:47 [INFO]: New connection: 49dyV0_VfCPxZzcHAAAL from ::1
+2025-10-27 17:39:47 [INFO]: Client connected: 49dyV0_VfCPxZzcHAAAL
+2025-10-27 17:39:47 [INFO]: ✅ Matched players: Kira vs manav
+2025-10-27 17:39:47 [INFO]: Game created: bb828354-cb93-438b-8db3-64b90ca07ce6 by player Kira
+2025-10-27 17:39:47 [INFO]: Player manav joined game bb828354-cb93-438b-8db3-64b90ca07ce6
+2025-10-27 17:39:47 [INFO]: ✅ PvP game started: bb828354-cb93-438b-8db3-64b90ca07ce6 - Kira vs manav
+2025-10-27 17:40:05 [INFO]: Game 37ce4707-bab5-4cb5-99fa-8c422639e264 forfeited by player bc5fb20d-b5c1-4499-b286-06a01ab6b7cc
+2025-10-27 17:40:05 [INFO]: 🏆 Game 37ce4707-bab5-4cb5-99fa-8c422639e264 won by manav (defeated Kira)
+2025-10-27 17:40:10 [INFO]: Game 37ce4707-bab5-4cb5-99fa-8c422639e264 deleted
+2025-10-27 17:40:15 [INFO]: Client disconnected: LfBkBXCN5ErQNaqZAAAJ
+2025-10-27 17:40:15 [INFO]: Client disconnected: LfBkBXCN5ErQNaqZAAAJ (anonymous) - Reason: transport close
+2025-10-27 17:40:45 [INFO]: Game bb828354-cb93-438b-8db3-64b90ca07ce6 forfeited by player bc5fb20d-b5c1-4499-b286-06a01ab6b7cc
+2025-10-27 17:40:45 [INFO]: 🏆 Game bb828354-cb93-438b-8db3-64b90ca07ce6 won by manav (defeated Kira)
+2025-10-27 17:40:50 [INFO]: Game bb828354-cb93-438b-8db3-64b90ca07ce6 deleted
+2025-10-27 17:42:42 [INFO]: Client disconnected: 49dyV0_VfCPxZzcHAAAL
+2025-10-27 17:42:42 [INFO]: Client disconnected: 49dyV0_VfCPxZzcHAAAL (anonymous) - Reason: transport close
+2025-10-27 17:42:46 [INFO]: New connection: FJanVu0jdFo6ZnpzAAAN from ::1
+2025-10-27 17:42:46 [INFO]: Client connected: FJanVu0jdFo6ZnpzAAAN
+2025-10-27 17:42:46 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:42:46 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:42:56 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:42:56 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:42:56 [INFO]: Game created: e4baa945-6252-41d2-897b-2ffb745682b2 by player manav
+2025-10-27 17:42:56 [INFO]: Player Bot joined game e4baa945-6252-41d2-897b-2ffb745682b2
+2025-10-27 17:42:56 [INFO]: ✅ Bot game emitted to manav: e4baa945-6252-41d2-897b-2ffb745682b2
+2025-10-27 17:43:02 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:43:03 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:43:05 [DEBUG]: Bot choosing strategic column 2
+2025-10-27 17:43:07 [DEBUG]: Bot choosing strategic column 5
+2025-10-27 17:43:09 [DEBUG]: Bot creating opportunity at column 3
+2025-10-27 17:43:10 [DEBUG]: Bot choosing winning move: column 3
+2025-10-27 17:43:10 [INFO]: Game e4baa945-6252-41d2-897b-2ffb745682b2 won by Bot
+2025-10-27 17:43:10 [INFO]: 🏆 Game e4baa945-6252-41d2-897b-2ffb745682b2 won by Bot (defeated manav)
+2025-10-27 17:43:15 [INFO]: Game e4baa945-6252-41d2-897b-2ffb745682b2 deleted
+2025-10-27 17:48:40 [INFO]: Client disconnected: FJanVu0jdFo6ZnpzAAAN
+2025-10-27 17:48:40 [INFO]: Client disconnected: FJanVu0jdFo6ZnpzAAAN (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:48:42 [INFO]: New connection: cHSkuwhlxnraClIdAAAP from ::1
+2025-10-27 17:48:42 [INFO]: Client connected: cHSkuwhlxnraClIdAAAP
+2025-10-27 17:48:42 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:48:42 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:48:52 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:48:52 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:48:52 [INFO]: Game created: d4de8a2d-086b-43b2-92ac-398aaf0c1201 by player manav
+2025-10-27 17:48:52 [INFO]: Player Bot joined game d4de8a2d-086b-43b2-92ac-398aaf0c1201
+2025-10-27 17:48:52 [INFO]: ✅ Bot game emitted to manav: d4de8a2d-086b-43b2-92ac-398aaf0c1201
+2025-10-27 17:48:59 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:49:01 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:49:02 [DEBUG]: Bot creating opportunity at column 3
+2025-10-27 17:49:03 [DEBUG]: Bot choosing winning move: column 3
+2025-10-27 17:49:03 [INFO]: Game d4de8a2d-086b-43b2-92ac-398aaf0c1201 won by Bot
+2025-10-27 17:49:03 [INFO]: 🏆 Game d4de8a2d-086b-43b2-92ac-398aaf0c1201 won by Bot (defeated manav)
+2025-10-27 17:49:07 [INFO]: Client disconnected: cHSkuwhlxnraClIdAAAP
+2025-10-27 17:49:07 [INFO]: Client disconnected: cHSkuwhlxnraClIdAAAP (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:49:08 [INFO]: Game d4de8a2d-086b-43b2-92ac-398aaf0c1201 deleted
+2025-10-27 17:49:11 [INFO]: New connection: 9WgmRY8jc48Exiv2AAAR from ::1
+2025-10-27 17:49:11 [INFO]: Client connected: 9WgmRY8jc48Exiv2AAAR
+2025-10-27 17:49:11 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:49:11 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:49:21 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:49:21 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:49:21 [INFO]: Game created: f0c0a315-c02e-4d47-89ae-cd057732a4db by player manav
+2025-10-27 17:49:21 [INFO]: Player Bot joined game f0c0a315-c02e-4d47-89ae-cd057732a4db
+2025-10-27 17:49:21 [INFO]: ✅ Bot game emitted to manav: f0c0a315-c02e-4d47-89ae-cd057732a4db
+2025-10-27 17:49:30 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:49:36 [INFO]: Client disconnected: 9WgmRY8jc48Exiv2AAAR
+2025-10-27 17:49:36 [INFO]: Client disconnected: 9WgmRY8jc48Exiv2AAAR (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:49:37 [INFO]: New connection: imHy0mKs1NcTGltYAAAT from ::1
+2025-10-27 17:49:37 [INFO]: Client connected: imHy0mKs1NcTGltYAAAT
+2025-10-27 17:49:37 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:49:37 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:49:47 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:49:47 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:49:47 [INFO]: Game created: b5a0e92f-ce40-40e3-80ed-66237f178c52 by player manav
+2025-10-27 17:49:47 [INFO]: Player Bot joined game b5a0e92f-ce40-40e3-80ed-66237f178c52
+2025-10-27 17:49:47 [INFO]: ✅ Bot game emitted to manav: b5a0e92f-ce40-40e3-80ed-66237f178c52
+2025-10-27 17:49:50 [INFO]: Client disconnected: imHy0mKs1NcTGltYAAAT
+2025-10-27 17:49:50 [INFO]: Client disconnected: imHy0mKs1NcTGltYAAAT (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:49:58 [INFO]: New connection: C9RKzzrj2eAT0x7LAAAV from ::1
+2025-10-27 17:49:58 [INFO]: Client connected: C9RKzzrj2eAT0x7LAAAV
+2025-10-27 17:49:58 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:49:58 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:50:05 [INFO]: Client disconnected: C9RKzzrj2eAT0x7LAAAV
+2025-10-27 17:50:05 [INFO]: ➖ Player removed from matchmaking queue
+2025-10-27 17:50:05 [INFO]: Client disconnected: C9RKzzrj2eAT0x7LAAAV (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:50:06 [INFO]: Game f0c0a315-c02e-4d47-89ae-cd057732a4db forfeited by player c52eea26-1c9f-4d07-a33f-a81c2d9f475f
+2025-10-27 17:50:06 [INFO]: 🏆 Game f0c0a315-c02e-4d47-89ae-cd057732a4db won by Bot (defeated manav)
+2025-10-27 17:50:11 [INFO]: Game f0c0a315-c02e-4d47-89ae-cd057732a4db deleted
+2025-10-27 17:50:20 [INFO]: Game b5a0e92f-ce40-40e3-80ed-66237f178c52 forfeited by player c52eea26-1c9f-4d07-a33f-a81c2d9f475f
+2025-10-27 17:50:20 [INFO]: 🏆 Game b5a0e92f-ce40-40e3-80ed-66237f178c52 won by Bot (defeated manav)
+2025-10-27 17:50:25 [INFO]: Game b5a0e92f-ce40-40e3-80ed-66237f178c52 deleted
+2025-10-27 17:52:14 [INFO]: New connection: guLZCtQAyY79Ol1xAAAX from ::1
+2025-10-27 17:52:14 [INFO]: Client connected: guLZCtQAyY79Ol1xAAAX
+2025-10-27 17:52:14 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:52:14 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:52:16 [INFO]: Client disconnected: guLZCtQAyY79Ol1xAAAX
+2025-10-27 17:52:16 [INFO]: ➖ Player removed from matchmaking queue
+2025-10-27 17:52:16 [INFO]: Client disconnected: guLZCtQAyY79Ol1xAAAX (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:53:46 [INFO]: New connection: G-bFwpEDibWdYnnxAAAZ from ::1
+2025-10-27 17:53:46 [INFO]: Client connected: G-bFwpEDibWdYnnxAAAZ
+2025-10-27 17:53:46 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:53:46 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:53:55 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:53:55 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:53:55 [INFO]: Game created: f97cd9ae-567f-4066-baa1-1b72d9890724 by player manav
+2025-10-27 17:53:55 [INFO]: Player Bot joined game f97cd9ae-567f-4066-baa1-1b72d9890724
+2025-10-27 17:53:55 [INFO]: ✅ Bot game emitted to manav: f97cd9ae-567f-4066-baa1-1b72d9890724
+2025-10-27 17:54:04 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:54:07 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:54:09 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:54:10 [DEBUG]: Bot creating opportunity at column 3
+2025-10-27 17:54:12 [DEBUG]: Bot choosing strategic column 2
+2025-10-27 17:54:14 [DEBUG]: Bot blocking opponent at column 4
+2025-10-27 17:54:18 [DEBUG]: Bot choosing winning move: column 1
+2025-10-27 17:54:18 [INFO]: Game f97cd9ae-567f-4066-baa1-1b72d9890724 won by Bot
+2025-10-27 17:54:18 [INFO]: 🏆 Game f97cd9ae-567f-4066-baa1-1b72d9890724 won by Bot (defeated manav)
+2025-10-27 17:54:23 [INFO]: Game f97cd9ae-567f-4066-baa1-1b72d9890724 deleted
+2025-10-27 17:54:23 [INFO]: Client disconnected: G-bFwpEDibWdYnnxAAAZ
+2025-10-27 17:54:23 [INFO]: Client disconnected: G-bFwpEDibWdYnnxAAAZ (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:54:56 [INFO]: New connection: cTIjVAzUb61VtusDAAAb from ::1
+2025-10-27 17:54:56 [INFO]: Client connected: cTIjVAzUb61VtusDAAAb
+2025-10-27 17:54:56 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-27 17:54:56 [INFO]: ⏳ manav waiting for opponent...
+2025-10-27 17:55:06 [INFO]: ⏰ Timeout reached for manav, calling bot match callback
+2025-10-27 17:55:06 [INFO]: 🤖 Creating bot game for manav
+2025-10-27 17:55:06 [INFO]: Game created: 3043127a-0c21-4877-8242-56d7606407fb by player manav
+2025-10-27 17:55:06 [INFO]: Player Bot joined game 3043127a-0c21-4877-8242-56d7606407fb
+2025-10-27 17:55:06 [INFO]: ✅ Bot game emitted to manav: 3043127a-0c21-4877-8242-56d7606407fb
+2025-10-27 17:55:40 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:55:42 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:55:44 [DEBUG]: Bot choosing center column 3
+2025-10-27 17:55:45 [DEBUG]: Bot blocking opponent at column 1
+2025-10-27 17:55:47 [INFO]: Game 3043127a-0c21-4877-8242-56d7606407fb won by manav
+2025-10-27 17:55:47 [INFO]: 🏆 Game 3043127a-0c21-4877-8242-56d7606407fb won by manav (defeated Bot)
+2025-10-27 17:55:51 [INFO]: Client disconnected: cTIjVAzUb61VtusDAAAb
+2025-10-27 17:55:51 [INFO]: Client disconnected: cTIjVAzUb61VtusDAAAb (anonymous) - Reason: client namespace disconnect
+2025-10-27 17:55:52 [INFO]: Game 3043127a-0c21-4877-8242-56d7606407fb deleted
+2025-10-27 17:56:03 [INFO]: Shutting down server...
+2025-10-27 17:56:03 [INFO]: HTTP server closed
+2025-10-27 17:56:03 [INFO]: Shutting down server...
+2025-10-27 17:56:03 [INFO]: HTTP server closed
