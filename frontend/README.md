@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+# 🎮 Connect Four - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time, multiplayer **Connect Four** game built with **React
+(Vite + TypeScript)** and **Socket.IO**.\
+Enjoy smooth animations, glowing effects, and a modern, responsive
+design.
 
-Currently, two official plugins are available:
+## 🚀 Quick Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+``` bash
+# 1. Clone the repo and go to frontend
+cd frontend
 
-## React Compiler
+# 2. Install dependencies
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 3. Create .env file
+VITE_API_URL=http://localhost:3001
+VITE_WS_URL=http://localhost:3001
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 4. Start the app
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then open 👉 **http://localhost:5173**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+------------------------------------------------------------------------
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🎯 Game Overview
+
+-   Two players compete to connect **4 discs** horizontally, vertically,
+    or diagonally.\
+-   Use **← → arrow keys** or **click** to select columns.\
+-   Press **Enter** or **Space** to drop your disc.\
+-   The first to connect 4 wins!\
+-   Wait too long? You'll play against a **bot**.
+
+------------------------------------------------------------------------
+
+## 🧩 Features
+
+-   ⚡ Real-time multiplayer with Socket.IO\
+-   🎨 Beautiful custom design (no Tailwind)\
+-   🔵 Live move indicator + hover preview\
+-   💡 Bot fallback when no opponent found\
+-   🏆 Leaderboard tracking wins/losses\
+-   💻 Fully responsive design
+
+------------------------------------------------------------------------
+
+## 🛠️ Tech Stack
+
+-   **Vite + React + TypeScript**
+-   **Socket.IO Client**
+-   **Custom CSS Animations**
+-   **Responsive Layout**
+
+------------------------------------------------------------------------
+
+## 💻 Scripts
+
+  Command             Description
+  ------------------- --------------------------
+  `npm run dev`       Start development server
+  `npm run build`     Build for production
+  `npm run preview`   Preview production build
+
+------------------------------------------------------------------------
+
+## 📂 Main Structure
+
+    src/
+    ├── components/   # GameBoard, GameInfo, Leaderboard
+    ├── services/     # Socket + API utilities
+    ├── types/        # Shared types
+    ├── App.tsx       # Main app logic
+    ├── App.css       # Complete styling
+    └── main.tsx      # Entry point
+
+------------------------------------------------------------------------
+
+## 🏁 Gameplay Tips
+
+-   🔁 Move quickly! Turns alternate instantly.\
+-   🧠 Think diagonally --- the bot does!\
+-   💬 Errors appear in the red banner above the board.
+
+------------------------------------------------------------------------
+
+## 💖 Credits
+
+Made with ❤️ using **React + TypeScript + Socket.IO**\
+by Manav Adwani
