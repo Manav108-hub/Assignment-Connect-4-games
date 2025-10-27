@@ -13,27 +13,30 @@ class AnalyticsConsumer {
   };
 
   async start(): Promise<void> {
-    try {
-      const consumer = await getConsumer();
-
-      await consumer.run({
-        eachMessage: async ({ topic, partition, message }) => {
-          try {
-            if (!message.value) return;
-
-            const event: AnalyticsEvent = JSON.parse(message.value.toString());
-            this.processEvent(event);
-          } catch (error) {
-            logger.error('Error processing analytics message:', error);
-          }
-        },
-      });
-
-      logger.info('✅ Analytics consumer started');
-    } catch (error) {
-      logger.error('Failed to start analytics consumer:', error);
+  try {
+    const consumer = await getConsumer();
+    if (!consumer) {
+      logger.info('⚠️  Analytics consumer disabled (Kafka unavailable)');
+      return;
     }
+
+    await consumer.run({
+      eachMessage: async ({ topic, partition, message }) => {
+        try {
+          if (!message.value) return;
+          const event: AnalyticsEvent = JSON.parse(message.value.toString());
+          this.processEvent(event);
+        } catch (error) {
+          logger.error('Error processing analytics message:', error);
+        }
+      },
+    });
+
+    logger.info('✅ Analytics consumer started');
+  } catch (error) {
+    logger.warn('⚠️  Analytics consumer disabled (Kafka unavailable)');
   }
+}
 
   private processEvent(event: AnalyticsEvent): void {
     switch (event.eventType) {

@@ -7,7 +7,8 @@ import { connectDatabase, disconnectDatabase } from './config/database';
 import { disconnectKafka } from './config/kafka';
 import { logger } from './utils/logger';
 import leaderboardRoutes from './routes/leaderboard.routes';
-import { GameHandler } from './websocket/game.handler';
+import gameRoutes from './routes/game.routes';
+import { ConnectionHandler } from './websocket/connection.handler';
 import { analyticsConsumer } from './consumer/analytics.consumer';
 
 const app = express();
@@ -32,10 +33,11 @@ app.get('/health', (req, res) => {
 
 // Routes
 app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/games', gameRoutes);
 
 // WebSocket connection handler
-const gameHandler = new GameHandler(io);
-io.on('connection', (socket) => gameHandler.handleConnection(socket));
+const connectionHandler = new ConnectionHandler(io);
+connectionHandler.handleConnections();
 
 // Startup
 const startServer = async () => {
@@ -52,7 +54,7 @@ const startServer = async () => {
 ╔════════════════════════════════════════╗
 ║   🎮 Connect Four Server Started      ║
 ║   Port: ${config.port}                      ║
-║   Environment: ${config.nodeEnv}          
+║   Environment: ${config.nodeEnv}          ║
 ╚════════════════════════════════════════╝
       `);
     });

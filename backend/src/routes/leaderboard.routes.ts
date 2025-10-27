@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { leaderboardController } from '../controller/leardership.contoller';
+import { leaderboardController } from '../controller/leardership.controller';
 
 const router = Router();
 

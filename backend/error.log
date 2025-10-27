@@ -1,0 +1,64 @@
+2025-10-27 15:51:34 [ERROR]: Failed to start analytics consumer: Connection error: connect ECONNREFUSED 127.0.0.1:9092
+KafkaJSNonRetriableError
+  Caused by: KafkaJSConnectionError: Connection error: connect ECONNREFUSED 127.0.0.1:9092
+    at Socket.onError (/home/manav/assignment-emitrr/backend/node_modules/kafkajs/src/network/connection.js:210:23)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-10-27 16:01:38 [ERROR]: Failed to start analytics consumer: Cannot read properties of null (reading 'run')
+TypeError: Cannot read properties of null (reading 'run')
+    at AnalyticsConsumer.start (/home/manav/assignment-emitrr/backend/src/consumer/analytics.consumer.ts:19:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async startServer (/home/manav/assignment-emitrr/backend/src/app.ts:47:5)
+2025-10-27 16:02:43 [ERROR]: Failed to start analytics consumer: Cannot read properties of null (reading 'run')
+TypeError: Cannot read properties of null (reading 'run')
+    at AnalyticsConsumer.start (/home/manav/assignment-emitrr/backend/src/consumer/analytics.consumer.ts:19:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async startServer (/home/manav/assignment-emitrr/backend/src/app.ts:47:5)
+2025-10-27 16:05:25 [ERROR]: Error fetching leaderboard: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+PrismaClientKnownRequestError: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+    at ei.handleRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async LeaderboardController.getLeaderboard (/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:23)
+2025-10-27 16:05:42 [ERROR]: Error fetching leaderboard: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+PrismaClientKnownRequestError: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+    at ei.handleRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async LeaderboardController.getLeaderboard (/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:23)

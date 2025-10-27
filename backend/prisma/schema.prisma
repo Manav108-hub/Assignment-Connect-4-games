@@ -23,9 +23,9 @@ model Game {
   player1Id   String
   player2Id   String
   winnerId    String?
-  status      String   // active, completed, forfeited
-  board       String   // JSON stringified board state
-  duration    Int?     // in seconds
+  status      String
+  board       String
+  duration    Int?
   isVsBot     Boolean  @default(false)
   createdAt   DateTime @default(now())
   completedAt DateTime?

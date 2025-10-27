@@ -1,0 +1,182 @@
+2025-10-27 15:51:32 [INFO]: ✅ Database connected successfully
+2025-10-27 15:51:34 [ERROR]: Failed to start analytics consumer: Connection error: connect ECONNREFUSED 127.0.0.1:9092
+KafkaJSNonRetriableError
+  Caused by: KafkaJSConnectionError: Connection error: connect ECONNREFUSED 127.0.0.1:9092
+    at Socket.onError (/home/manav/assignment-emitrr/backend/node_modules/kafkajs/src/network/connection.js:210:23)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-10-27 15:51:34 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:01:38 [INFO]: Shutting down server...
+2025-10-27 16:01:38 [INFO]: HTTP server closed
+2025-10-27 16:01:38 [INFO]: Database disconnected
+2025-10-27 16:01:38 [INFO]: ✅ Database connected successfully
+2025-10-27 16:01:38 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:01:38 [ERROR]: Failed to start analytics consumer: Cannot read properties of null (reading 'run')
+TypeError: Cannot read properties of null (reading 'run')
+    at AnalyticsConsumer.start (/home/manav/assignment-emitrr/backend/src/consumer/analytics.consumer.ts:19:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async startServer (/home/manav/assignment-emitrr/backend/src/app.ts:47:5)
+2025-10-27 16:01:38 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:02:42 [INFO]: Shutting down server...
+2025-10-27 16:02:42 [INFO]: HTTP server closed
+2025-10-27 16:02:42 [INFO]: Database disconnected
+2025-10-27 16:02:43 [INFO]: ✅ Database connected successfully
+2025-10-27 16:02:43 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:02:43 [ERROR]: Failed to start analytics consumer: Cannot read properties of null (reading 'run')
+TypeError: Cannot read properties of null (reading 'run')
+    at AnalyticsConsumer.start (/home/manav/assignment-emitrr/backend/src/consumer/analytics.consumer.ts:19:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async startServer (/home/manav/assignment-emitrr/backend/src/app.ts:47:5)
+2025-10-27 16:02:43 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:03:04 [INFO]: Shutting down server...
+2025-10-27 16:03:04 [INFO]: HTTP server closed
+2025-10-27 16:03:04 [INFO]: Database disconnected
+2025-10-27 16:03:04 [INFO]: ✅ Database connected successfully
+2025-10-27 16:03:04 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:03:04 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 16:03:04 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:05:25 [ERROR]: Error fetching leaderboard: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+PrismaClientKnownRequestError: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+    at ei.handleRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async LeaderboardController.getLeaderboard (/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:23)
+2025-10-27 16:05:35 [INFO]: Shutting down server...
+2025-10-27 16:05:35 [INFO]: HTTP server closed
+2025-10-27 16:05:35 [INFO]: Shutting down server...
+2025-10-27 16:05:35 [INFO]: HTTP server closed
+2025-10-27 16:05:38 [INFO]: ✅ Database connected successfully
+2025-10-27 16:05:38 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:05:38 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 16:05:38 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:05:42 [ERROR]: Error fetching leaderboard: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+PrismaClientKnownRequestError: 
+Invalid `prisma.player.findMany()` invocation in
+/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:43
+
+  5 export class LeaderboardController {
+  6   async getLeaderboard(req: Request, res: Response): Promise<void> {
+  7     try {
+→ 8       const players = await prisma.player.findMany(
+The table `public.Player` does not exist in the current database.
+    at ei.handleRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async LeaderboardController.getLeaderboard (/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:23)
+2025-10-27 16:07:31 [INFO]: Shutting down server...
+2025-10-27 16:07:31 [INFO]: HTTP server closed
+2025-10-27 16:07:31 [INFO]: Shutting down server...
+2025-10-27 16:07:31 [INFO]: HTTP server closed
+2025-10-27 16:12:16 [INFO]: ✅ Database connected successfully
+2025-10-27 16:12:16 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:12:16 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 16:12:16 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:14:53 [INFO]: Shutting down server...
+2025-10-27 16:14:53 [INFO]: HTTP server closed
+2025-10-27 16:14:53 [INFO]: Database disconnected
+2025-10-27 16:14:59 [INFO]: ✅ Database connected successfully
+2025-10-27 16:14:59 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:14:59 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 16:14:59 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:16:40 [INFO]: Shutting down server...
+2025-10-27 16:16:40 [INFO]: HTTP server closed
+2025-10-27 16:16:40 [INFO]: Database disconnected
+2025-10-27 16:16:41 [INFO]: ✅ Database connected successfully
+2025-10-27 16:16:41 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:16:41 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 16:16:41 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:17:23 [INFO]: Shutting down server...
+2025-10-27 16:17:23 [INFO]: HTTP server closed
+2025-10-27 16:17:23 [INFO]: Database disconnected
+2025-10-27 16:22:45 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-27 16:22:45 [INFO]: ✅ Database connected successfully
+2025-10-27 16:22:45 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-27 16:22:45 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-27 16:22:45 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-27 16:24:45 [INFO]: Shutting down server...
+2025-10-27 16:24:45 [INFO]: HTTP server closed
+2025-10-27 16:24:45 [INFO]: Shutting down server...
+2025-10-27 16:24:45 [INFO]: HTTP server closed
+2025-10-27 16:24:45 [INFO]: Database disconnected

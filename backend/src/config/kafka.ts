@@ -6,29 +6,46 @@ const kafka = new Kafka({
   clientId: config.kafka.clientId,
   brokers: [config.kafka.broker],
   retry: {
-    retries: 3,
-    initialRetryTime: 300,
+    retries: 0, // Don't retry if Kafka is not available
   },
+  logLevel: 1, // Only log errors
 });
 
 let producer: Producer | null = null;
 let consumer: Consumer | null = null;
+let kafkaEnabled = true; // Track if Kafka is available
 
-export const getProducer = async (): Promise<Producer> => {
+export const getProducer = async (): Promise<Producer | null> => {
+  if (!kafkaEnabled) return null;
+  
   if (!producer) {
-    producer = kafka.producer();
-    await producer.connect();
-    logger.info('✅ Kafka producer connected');
+    try {
+      producer = kafka.producer();
+      await producer.connect();
+      logger.info('✅ Kafka producer connected');
+    } catch (error) {
+      logger.warn('⚠️  Kafka not available - analytics disabled');
+      kafkaEnabled = false;
+      return null;
+    }
   }
   return producer;
 };
 
-export const getConsumer = async (): Promise<Consumer> => {
+export const getConsumer = async (): Promise<Consumer | null> => {
+  if (!kafkaEnabled) return null;
+  
   if (!consumer) {
-    consumer = kafka.consumer({ groupId: config.kafka.groupId });
-    await consumer.connect();
-    await consumer.subscribe({ topic: config.kafka.topic, fromBeginning: true });
-    logger.info('✅ Kafka consumer connected');
+    try {
+      consumer = kafka.consumer({ groupId: config.kafka.groupId });
+      await consumer.connect();
+      await consumer.subscribe({ topic: config.kafka.topic, fromBeginning: true });
+      logger.info('✅ Kafka consumer connected');
+    } catch (error) {
+      logger.warn('⚠️  Kafka not available - analytics disabled');
+      kafkaEnabled = false;
+      return null;
+    }
   }
   return consumer;
 };

@@ -5,22 +5,27 @@ import { logger } from '../utils/logger';
 
 class AnalyticsService {
   async sendEvent(event: AnalyticsEvent): Promise<void> {
-    try {
-      const producer = await getProducer();
-      await producer.send({
-        topic: config.kafka.topic,
-        messages: [
-          {
-            key: event.gameId,
-            value: JSON.stringify(event),
-          },
-        ],
-      });
-      logger.debug(`Analytics event sent: ${event.eventType} for game ${event.gameId}`);
-    } catch (error) {
-      logger.error('Failed to send analytics event:', error);
+  try {
+    const producer = await getProducer();
+    if (!producer) {
+      // Kafka not available, skip silently
+      return;
     }
+    await producer.send({
+      topic: config.kafka.topic,
+      messages: [
+        {
+          key: event.gameId,
+          value: JSON.stringify(event),
+        },
+      ],
+    });
+    logger.debug(`Analytics event sent: ${event.eventType}`);
+  } catch (error) {
+    // Fail silently - analytics are not critical
+    logger.debug('Analytics event skipped (Kafka unavailable)');
   }
+}
 
   async gameStarted(
     gameId: string,

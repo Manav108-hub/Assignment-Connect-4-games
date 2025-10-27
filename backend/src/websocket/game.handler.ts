@@ -1,4 +1,5 @@
 import { Server, Socket } from 'socket.io';
+import { v4 as uuidv4 } from 'uuid';
 import { gameService } from '../services/game.service';
 import { matchmakingService } from '../services/matchmaking.service';
 import { botService } from '../services/bot.service';
@@ -7,6 +8,7 @@ import { prisma } from '../config/database';
 import { Player } from '../models/types';
 import { config } from '../config/env';
 import { logger } from '../utils/logger';
+import { Validator } from '../utils/validations';
 
 export class GameHandler {
   private io: Server;
@@ -40,8 +42,10 @@ export class GameHandler {
     try {
       const { username } = data;
 
-      if (!username || username.trim().length === 0) {
-        socket.emit('error', { message: 'Username is required' });
+      // Validate username
+      const usernameValidation = Validator.isValidUsername(username);
+      if (!usernameValidation.valid) {
+        socket.emit('error', { message: usernameValidation.error });
         return;
       }
 
@@ -145,6 +149,21 @@ export class GameHandler {
   ): Promise<void> {
     try {
       const { gameId, column } = data;
+
+      // Validate column
+      const columnValidation = Validator.isValidColumn(column);
+      if (!columnValidation.valid) {
+        socket.emit('error', { message: columnValidation.error });
+        return;
+      }
+
+      // Validate game ID
+      const gameIdValidation = Validator.isValidGameId(gameId);
+      if (!gameIdValidation.valid) {
+        socket.emit('error', { message: gameIdValidation.error });
+        return;
+      }
+
       const game = gameService.getGame(gameId);
 
       if (!game) {
@@ -281,7 +300,7 @@ export class GameHandler {
 
     await analyticsService.gameEnded(
       game.id,
-      winnerId ?? undefined,
+      winnerId || undefined,
       duration,
       game.player2?.isBot || false
     );
@@ -296,6 +315,14 @@ export class GameHandler {
   ): Promise<void> {
     try {
       const { gameId, playerId } = data;
+
+      // Validate game ID
+      const gameIdValidation = Validator.isValidGameId(gameId);
+      if (!gameIdValidation.valid) {
+        socket.emit('error', { message: gameIdValidation.error });
+        return;
+      }
+
       const game = gameService.getGame(gameId);
 
       if (!game) {
@@ -344,7 +371,7 @@ export class GameHandler {
     const game = games.find(
       (g) =>
         g.player1.socketId === socket.id ||
-        (g.player2 && g.player2.socketId === socket.id)
+        g.player2?.socketId === socket.id
     );
 
     if (game) {
@@ -358,7 +385,7 @@ export class GameHandler {
           const currentGame = gameService.getGame(game.id);
           if (currentGame && currentGame.disconnectedPlayer === player.id) {
             gameService.forfeitGame(game.id, player.id);
-            this.handleGameEnd(currentGame, currentGame.winner ?? undefined);
+            this.handleGameEnd(currentGame, currentGame.winner || undefined);
           }
         }, config.game.reconnectTimeout);
 
