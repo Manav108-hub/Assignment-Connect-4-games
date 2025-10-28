@@ -758,3 +758,138 @@ The table `public.Player` does not exist in the current database.
 ║   Environment: development          ║
 ╚════════════════════════════════════════╝
       
+2025-10-28 06:54:56 [INFO]: Shutting down server...
+2025-10-28 06:54:56 [INFO]: HTTP server closed
+2025-10-28 06:54:56 [INFO]: Database disconnected
+2025-10-28 06:54:56 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 06:54:56 [INFO]: ✅ Database connected successfully
+2025-10-28 06:54:56 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 06:54:56 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 06:54:56 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 06:56:57 [INFO]: Shutting down server...
+2025-10-28 06:56:57 [INFO]: HTTP server closed
+2025-10-28 06:56:57 [INFO]: Database disconnected
+2025-10-28 06:56:58 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 06:56:58 [INFO]: ✅ Database connected successfully
+2025-10-28 06:56:58 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 06:56:58 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 06:56:58 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 06:58:29 [INFO]: New connection: HoOd7aRA33lnEhMfAAAB from ::1
+2025-10-28 06:58:29 [INFO]: Client connected: HoOd7aRA33lnEhMfAAAB
+2025-10-28 06:58:29 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 06:58:29 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 06:58:29 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 06:58:33 [INFO]: New connection: wCIHW2CgLDXUu2rqAAAD from ::1
+2025-10-28 06:58:33 [INFO]: Client connected: wCIHW2CgLDXUu2rqAAAD
+2025-10-28 06:58:33 [INFO]: ✅ MATCH FOUND: manav vs kira
+2025-10-28 06:58:33 [INFO]: 🧹 Removed manav from matchmaking queue
+2025-10-28 06:58:33 [INFO]: 📊 Queue size after match: 0
+2025-10-28 06:58:33 [INFO]: 🎮 PvP Match: manav vs kira
+2025-10-28 06:58:33 [INFO]: ✨ Sent "match_found" to both players
+2025-10-28 06:58:36 [INFO]: Game created: 7f0b8efb-9515-4745-9f3f-9f8363a451a2 by player manav
+2025-10-28 06:58:36 [INFO]: Player kira joined game 7f0b8efb-9515-4745-9f3f-9f8363a451a2
+2025-10-28 06:58:36 [INFO]: ✅ Player1 manav joined room 7f0b8efb-9515-4745-9f3f-9f8363a451a2
+2025-10-28 06:58:36 [INFO]: ✅ Player2 kira joined room 7f0b8efb-9515-4745-9f3f-9f8363a451a2
+2025-10-28 06:58:36 [INFO]: ✅ PvP game started: 7f0b8efb-9515-4745-9f3f-9f8363a451a2 - manav vs kira
+2025-10-28 06:58:36 [INFO]: 🎯 First turn: player1
+2025-10-28 06:58:46 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 06:58:46 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:58:48 [INFO]: 🎯 kira (player2) making move at column 2
+2025-10-28 06:58:48 [INFO]: ✅ Move successful! Next turn: player1
+2025-10-28 06:58:51 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 06:58:51 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:58:53 [INFO]: 🎯 kira (player2) making move at column 2
+2025-10-28 06:58:53 [INFO]: ✅ Move successful! Next turn: player1
+2025-10-28 06:58:55 [INFO]: 🎯 manav (player1) making move at column 2
+2025-10-28 06:58:55 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:58:57 [INFO]: 🎯 kira (player2) making move at column 3
+2025-10-28 06:58:57 [INFO]: ✅ Move successful! Next turn: player1
+2025-10-28 06:58:59 [INFO]: 🎯 manav (player1) making move at column 1
+2025-10-28 06:58:59 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:59:01 [INFO]: 🎯 kira (player2) making move at column 5
+2025-10-28 06:59:01 [INFO]: ✅ Move successful! Next turn: player1
+2025-10-28 06:59:03 [INFO]: 🎯 manav (player1) making move at column 0
+2025-10-28 06:59:03 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:59:10 [INFO]: 🎯 kira (player2) making move at column 4
+2025-10-28 06:59:10 [INFO]: ✅ Move successful! Next turn: player1
+2025-10-28 06:59:13 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 06:59:13 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:59:15 [INFO]: 🎯 kira (player2) making move at column 1
+2025-10-28 06:59:15 [INFO]: Game 7f0b8efb-9515-4745-9f3f-9f8363a451a2 won by kira
+2025-10-28 06:59:15 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:59:15 [INFO]: 🏆 Game 7f0b8efb-9515-4745-9f3f-9f8363a451a2 won by kira (defeated manav)
+2025-10-28 06:59:20 [INFO]: Game 7f0b8efb-9515-4745-9f3f-9f8363a451a2 deleted
+2025-10-28 06:59:21 [INFO]: Client disconnected: HoOd7aRA33lnEhMfAAAB
+2025-10-28 06:59:21 [INFO]: Client disconnected: HoOd7aRA33lnEhMfAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:59:23 [INFO]: Client disconnected: wCIHW2CgLDXUu2rqAAAD
+2025-10-28 06:59:23 [INFO]: Client disconnected: wCIHW2CgLDXUu2rqAAAD (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:59:26 [INFO]: New connection: P51HSK2B_Hr285XkAAAF from ::1
+2025-10-28 06:59:26 [INFO]: Client connected: P51HSK2B_Hr285XkAAAF
+2025-10-28 06:59:26 [INFO]: ➕ Adding kira to matchmaking queue
+2025-10-28 06:59:26 [INFO]: ⏳ kira waiting for opponent (1 in queue)
+2025-10-28 06:59:26 [INFO]: ⏳ kira waiting for opponent...
+2025-10-28 06:59:27 [INFO]: New connection: DGIC3o8uGbt3Rr_ZAAAH from ::1
+2025-10-28 06:59:27 [INFO]: Client connected: DGIC3o8uGbt3Rr_ZAAAH
+2025-10-28 06:59:27 [INFO]: ✅ MATCH FOUND: kira vs manav
+2025-10-28 06:59:27 [INFO]: 🧹 Removed kira from matchmaking queue
+2025-10-28 06:59:27 [INFO]: 📊 Queue size after match: 0
+2025-10-28 06:59:27 [INFO]: 🎮 PvP Match: kira vs manav
+2025-10-28 06:59:27 [INFO]: ✨ Sent "match_found" to both players
+2025-10-28 06:59:30 [INFO]: Game created: 2541ea33-80d3-4af5-90f7-eb46bbd0492a by player kira
+2025-10-28 06:59:30 [INFO]: Player manav joined game 2541ea33-80d3-4af5-90f7-eb46bbd0492a
+2025-10-28 06:59:30 [INFO]: ✅ Player1 kira joined room 2541ea33-80d3-4af5-90f7-eb46bbd0492a
+2025-10-28 06:59:30 [INFO]: ✅ Player2 manav joined room 2541ea33-80d3-4af5-90f7-eb46bbd0492a
+2025-10-28 06:59:30 [INFO]: ✅ PvP game started: 2541ea33-80d3-4af5-90f7-eb46bbd0492a - kira vs manav
+2025-10-28 06:59:30 [INFO]: 🎯 First turn: player1
+2025-10-28 06:59:40 [INFO]: 🎯 kira (player1) making move at column 4
+2025-10-28 06:59:40 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:59:44 [INFO]: Client disconnected: P51HSK2B_Hr285XkAAAF
+2025-10-28 06:59:44 [INFO]: Client disconnected: P51HSK2B_Hr285XkAAAF (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:59:46 [INFO]: Client disconnected: DGIC3o8uGbt3Rr_ZAAAH
+2025-10-28 06:59:46 [INFO]: Client disconnected: DGIC3o8uGbt3Rr_ZAAAH (anonymous) - Reason: client namespace disconnect
+2025-10-28 07:00:16 [INFO]: Game 2541ea33-80d3-4af5-90f7-eb46bbd0492a forfeited by player c52eea26-1c9f-4d07-a33f-a81c2d9f475f
+2025-10-28 07:00:16 [INFO]: 🏆 Game 2541ea33-80d3-4af5-90f7-eb46bbd0492a won by kira (defeated manav)
+2025-10-28 07:00:21 [INFO]: Game 2541ea33-80d3-4af5-90f7-eb46bbd0492a deleted
+2025-10-28 07:00:27 [INFO]: New connection: 4S5LCACgVG4zok99AAAJ from ::1
+2025-10-28 07:00:27 [INFO]: Client connected: 4S5LCACgVG4zok99AAAJ
+2025-10-28 07:00:27 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 07:00:27 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 07:00:27 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 07:00:37 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 07:00:37 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 07:00:37 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 07:00:37 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 07:00:40 [INFO]: Game created: b9a07668-db1e-4271-a9cf-c9f12955d5c1 by player manav
+2025-10-28 07:00:40 [INFO]: Player Bot joined game b9a07668-db1e-4271-a9cf-c9f12955d5c1
+2025-10-28 07:00:40 [INFO]: ✅ Bot game started: b9a07668-db1e-4271-a9cf-c9f12955d5c1 - manav vs Bot
+2025-10-28 07:00:42 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 07:00:42 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:00:42 [DEBUG]: Bot choosing center column 3
+2025-10-28 07:00:42 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 07:00:43 [INFO]: 🎯 manav (player1) making move at column 2
+2025-10-28 07:00:43 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:00:44 [DEBUG]: Bot choosing center column 3
+2025-10-28 07:00:44 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 07:00:44 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 07:00:44 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:00:45 [DEBUG]: Bot blocking opponent at column 1
+2025-10-28 07:00:45 [INFO]: 🤖 Bot making move at column 1
+2025-10-28 07:00:46 [INFO]: 🎯 manav (player1) making move at column 5
+2025-10-28 07:00:46 [INFO]: Game b9a07668-db1e-4271-a9cf-c9f12955d5c1 won by manav
+2025-10-28 07:00:46 [INFO]: ✅ Move successful! Next turn: player1
+2025-10-28 07:00:46 [INFO]: 🏆 Game b9a07668-db1e-4271-a9cf-c9f12955d5c1 won by manav (defeated Bot)
+2025-10-28 07:00:51 [INFO]: Game b9a07668-db1e-4271-a9cf-c9f12955d5c1 deleted
+2025-10-28 07:00:51 [INFO]: Client disconnected: 4S5LCACgVG4zok99AAAJ
+2025-10-28 07:00:51 [INFO]: Client disconnected: 4S5LCACgVG4zok99AAAJ (anonymous) - Reason: client namespace disconnect

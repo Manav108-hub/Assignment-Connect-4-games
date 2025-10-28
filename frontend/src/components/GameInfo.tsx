@@ -22,7 +22,7 @@ export function GameInfo({ gameState }: GameInfoProps) {
               {amIPlayer1 ? 'You' : gameState.opponent}
             </span>
             {amIPlayer1 && isMyTurn && gameState.status === 'active' && (
-              <span className="turn-badge">Your Turn</span>
+              <span className="turn-badge"> : Your Turn</span>
             )}
           </div>
         </div>

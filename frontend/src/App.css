@@ -676,3 +676,71 @@ input {
   transform: scale(1.2);
   box-shadow: 0 0 16px #90e0ef;
 }
+
+
+/* 🎉 Match Found Screen */
+.matched-card {
+  background: white;
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+  animation: slideUp 0.4s ease-out;
+}
+
+.match-animation {
+  font-size: 80px;
+  animation: bounce 0.6s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.matched-card h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.opponent-name {
+  font-size: 24px;
+  color: #555;
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.opponent-name strong {
+  color: #3498db;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.matched-card .sub-text {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.matched-card .loading-spinner {
+  margin: 30px auto 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -6,7 +6,7 @@ import { getSocket, connectSocket, disconnectSocket } from './services/socket';
 import type { GameState, CellValue, Position } from './types';
 import './App.css';
 
-type AppState = 'login' | 'searching' | 'playing';
+type AppState = 'login' | 'searching' | 'matched' | 'playing';
 
 function App() {
   const [appState, setAppState] = useState<AppState>('login');
@@ -15,8 +15,8 @@ function App() {
   const [lastMove, setLastMove] = useState<Position | undefined>();
   const [error, setError] = useState<string>('');
   const [selectedColumn, setSelectedColumn] = useState<number>(3);
+  const [matchedOpponent, setMatchedOpponent] = useState<string>('');
   
-  // 🔒 Prevent double-clicking
   const isProcessingMove = useRef(false);
 
   useEffect(() => {
@@ -32,6 +32,12 @@ function App() {
       setAppState('searching');
     });
 
+    socket.on('match_found', (data) => {
+      console.log('🎉 Match found!', data);
+      setMatchedOpponent(data.opponent);
+      setAppState('matched');
+    });
+
     socket.on('game_found', (data) => {
       console.log('🎮 Game found!', data);
       
@@ -39,7 +45,6 @@ function App() {
         .fill(null)
         .map(() => Array(7).fill('empty'));
 
-      // ✅ Use playerNumber from backend
       const myPlayerNumber = data.playerNumber;
       const isMyTurn = data.currentTurn === myPlayerNumber;
       
@@ -61,19 +66,17 @@ function App() {
       setAppState('playing');
       setLastMove(undefined);
       setSelectedColumn(3);
-      isProcessingMove.current = false; // Reset lock
+      isProcessingMove.current = false;
     });
 
     socket.on('move_made', (data) => {
       console.log('📥 Move made:', data);
       
-      // 🔓 Unlock after move processed
       isProcessingMove.current = false;
       
       setGameState((prev) => {
         if (!prev) return null;
 
-        // ✅ Use nextTurn from backend
         const nextTurn = data.nextTurn;
         const isMyTurn = nextTurn === prev.playerNumber;
 
@@ -92,7 +95,6 @@ function App() {
     socket.on('game_over', (data) => {
       console.log('🏁 Game over:', data);
       
-      // 🔓 Unlock on game end
       isProcessingMove.current = false;
       
       setGameState((prev) => {
@@ -135,7 +137,6 @@ function App() {
       console.error('❌ Error from server:', data);
       setError(data.message);
       
-      // 🔓 Unlock on error
       isProcessingMove.current = false;
       
       setTimeout(() => setError(''), 5000);
@@ -144,6 +145,7 @@ function App() {
     return () => {
       socket.off('connect');
       socket.off('waiting_for_opponent');
+      socket.off('match_found');
       socket.off('game_found');
       socket.off('move_made');
       socket.off('game_over');
@@ -153,7 +155,6 @@ function App() {
     };
   }, []);
 
-  // KEYBOARD CONTROLS
   useEffect(() => {
     if (appState !== 'playing' || !gameState || !gameState.myTurn || gameState.status !== 'active') {
       return;
@@ -189,7 +190,6 @@ function App() {
   };
 
   const handleColumnClick = (col: number) => {
-    // 🔒 CRITICAL: Prevent double-clicking
     if (isProcessingMove.current) {
       console.log('⚠️ Already processing a move, please wait...');
       return;
@@ -200,17 +200,14 @@ function App() {
       return;
     }
 
-    // Check if column is full
     if (gameState.board[0][col] !== 'empty') {
       console.log('❌ Column is full');
       return;
     }
 
-    // 🔒 Lock moves until server responds
     isProcessingMove.current = true;
     console.log(`🎯 Making move at column ${col}, locked=true`);
 
-    // Optimistically disable UI
     setGameState(prev => {
       if (!prev) return null;
       return { ...prev, myTurn: false };
@@ -225,11 +222,11 @@ function App() {
     setLastMove(undefined);
     setAppState('login');
     setSelectedColumn(3);
+    setMatchedOpponent('');
     isProcessingMove.current = false;
     disconnectSocket();
   };
 
-  // Login Screen
   if (appState === 'login') {
     return (
       <div className="app">
@@ -281,7 +278,6 @@ function App() {
     );
   }
 
-  // Searching Screen
   if (appState === 'searching') {
     return (
       <div className="app">
@@ -300,7 +296,24 @@ function App() {
     );
   }
 
-  // Playing Screen
+  if (appState === 'matched') {
+    return (
+      <div className="app">
+        <div className="container">
+          <div className="matched-card">
+            <div className="match-animation">🎉</div>
+            <h2>Match Found!</h2>
+            <p className="opponent-name">
+              vs <strong>{matchedOpponent}</strong>
+            </p>
+            <p className="sub-text">Get ready to play...</p>
+            <div className="loading-spinner"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (appState === 'playing' && gameState) {
     return (
       <div className="app">

@@ -12,7 +12,7 @@ import { Validator } from '../utils/validations';
 
 export class GameHandler {
   private io: Server;
-  private processingMoves: Set<string> = new Set(); // 🔒 Prevent double moves
+  private processingMoves: Set<string> = new Set();
 
   constructor(io: Server) {
     this.io = io;
@@ -75,44 +75,54 @@ export class GameHandler {
           isBot: true,
         };
 
-        // Create game with bot
-        const botGame = gameService.createGame(player);
-        gameService.joinGame(botGame.id, bot);
-
-        // Join socket room
-        socket.join(botGame.id);
-
-        // Emit game_found to the player
-        socket.emit('game_found', {
-          gameId: botGame.id,
-          playerId: player.id,
+        // Show match found with Bot
+        socket.emit('match_found', {
           opponent: 'Bot',
           isVsBot: true,
-          currentTurn: botGame.currentTurn,
-          playerNumber: 'player1', // Always player1 vs bot
         });
 
-        logger.info(`✅ Bot game started: ${botGame.id} - ${player.username} vs Bot`);
+        logger.info(`✨ Sent "match_found" (vs Bot) to ${player.username}`);
 
-        // Send analytics
-        await analyticsService.gameStarted(
-          botGame.id,
-          botGame.player1.username,
-          'Bot',
-          true
-        );
+        // Wait 3 seconds before starting bot game
+        setTimeout(async () => {
+          // Create game with bot
+          const botGame = gameService.createGame(player);
+          gameService.joinGame(botGame.id, bot);
 
-        // If it's bot's turn at start (shouldn't happen, but just in case)
-        setTimeout(() => {
-          const currentGame = gameService.getGame(botGame.id);
-          if (!currentGame || currentGame.status !== 'active') return;
+          // Join socket room
+          socket.join(botGame.id);
 
-          // Bot is always player2, so check if it's player2's turn
-          if (currentGame.currentTurn === 'player2') {
-            logger.info(`🤖 Making initial bot move for game ${botGame.id}`);
-            this.makeBotMove(botGame.id);
-          }
-        }, 1000);
+          // Emit game_found to the player
+          socket.emit('game_found', {
+            gameId: botGame.id,
+            playerId: player.id,
+            opponent: 'Bot',
+            isVsBot: true,
+            currentTurn: botGame.currentTurn,
+            playerNumber: 'player1',
+          });
+
+          logger.info(`✅ Bot game started: ${botGame.id} - ${player.username} vs Bot`);
+
+          // Send analytics
+          await analyticsService.gameStarted(
+            botGame.id,
+            botGame.player1.username,
+            'Bot',
+            true
+          );
+
+          // If it's bot's turn at start (shouldn't happen)
+          setTimeout(() => {
+            const currentGame = gameService.getGame(botGame.id);
+            if (!currentGame || currentGame.status !== 'active') return;
+
+            if (currentGame.currentTurn === 'player2') {
+              logger.info(`🤖 Making initial bot move for game ${botGame.id}`);
+              this.makeBotMove(botGame.id);
+            }
+          }, 1000);
+        }, 3000); // 3-second Match Found screen
       };
 
       // Try to match with another player
@@ -123,15 +133,28 @@ export class GameHandler {
         const player1 = matchResult.waitingPlayer;
         const player2 = playerObj;
 
-        logger.info(`🎮 Matched: ${player1.username} vs ${player2.username}`);
+        logger.info(`🎮 PvP Match: ${player1.username} vs ${player2.username}`);
         
-        // Add 2-second delay for better UX (feels more natural)
+        // 🎉 STEP 1: Show "Match Found" screen to BOTH players
+        this.io.to(player1.socketId).emit('match_found', {
+          opponent: player2.username,
+          isVsBot: false,
+        });
+        
+        socket.emit('match_found', {
+          opponent: player1.username,
+          isVsBot: false,
+        });
+        
+        logger.info(`✨ Sent "match_found" to both players`);
+        
+        // 🎉 STEP 2: Wait 3 seconds, then start game
         setTimeout(async () => {
           // Create game
           const game = gameService.createGame(player1);
           gameService.joinGame(game.id, player2);
 
-          // ✅ FIX: Both players join the socket room
+          // Both players join the socket room
           const player1Socket = this.io.sockets.sockets.get(player1.socketId);
           if (player1Socket) {
             player1Socket.join(game.id);
@@ -173,7 +196,7 @@ export class GameHandler {
             player2.username,
             false
           );
-        }, 2000); // 2-second delay for matchmaking feel
+        }, 3000); // 3-second "Match Found" screen
 
       } else if (matchResult.type === 'waiting') {
         // Waiting for opponent or bot
@@ -241,17 +264,16 @@ export class GameHandler {
         return;
       }
 
-      // 🔒 CRITICAL: Check if it's this player's turn
+      // 🔒 Check if it's this player's turn
       const playerNumber = game.player1.id === player.id ? 'player1' : 'player2';
       if (game.currentTurn !== playerNumber) {
-        logger.warn(`❌ Not ${player.username}'s turn. Current turn: ${game.currentTurn}, Player: ${playerNumber}`);
+        logger.warn(`❌ Not ${player.username}'s turn. Current: ${game.currentTurn}, Player: ${playerNumber}`);
         socket.emit('error', { message: 'Not your turn!' });
         return;
       }
 
       logger.info(`🎯 ${player.username} (${playerNumber}) making move at column ${column}`);
 
-      // Determine who made the move BEFORE turn switches
       const playerWhoMoved = playerNumber;
 
       const result = gameService.makeMove(gameId, player.id, column);
@@ -263,7 +285,7 @@ export class GameHandler {
 
       logger.info(`✅ Move successful! Next turn: ${game.currentTurn}`);
 
-      // ✅ Emit to ALL players in the room
+      // Emit to ALL players in the room
       this.io.to(gameId).emit('move_made', {
         position: result.position,
         player: playerWhoMoved,
@@ -287,7 +309,6 @@ export class GameHandler {
       logger.error('Error in handleMakeMove:', error);
       socket.emit('error', { message: 'Failed to make move' });
     } finally {
-      // 🔓 Release lock after processing
       this.processingMoves.delete(lockKey);
     }
   }
@@ -301,7 +322,6 @@ export class GameHandler {
 
     const botPiece = bot.id === game.player1.id ? 'player1' : 'player2';
     
-    // Check if it's actually bot's turn
     if (game.currentTurn !== botPiece) {
       logger.warn(`⚠️ Tried to make bot move but it's not bot's turn. Current: ${game.currentTurn}`);
       return;
@@ -339,15 +359,12 @@ export class GameHandler {
         (new Date().getTime() - game.createdAt.getTime()) / 1000
       );
 
-      // --- 🎯 Update Player Stats ---
       if (isDraw) {
-        // Draw for Player 1
         await prisma.player.updateMany({
           where: { id: game.player1.id },
           data: { draws: { increment: 1 } },
         });
 
-        // Draw for Player 2 (only if exists and not a bot)
         if (game.player2 && !game.player2.isBot) {
           await prisma.player.updateMany({
             where: { id: game.player2.id },
@@ -359,17 +376,14 @@ export class GameHandler {
           `🤝 Game ${game.id} ended in a draw between ${game.player1.username} and ${game.player2?.username || "Bot"}`
         );
       } else if (winnerId) {
-        // Determine the loser
         const loserId =
           winnerId === game.player1.id ? game.player2?.id : game.player1.id;
 
-        // Get winner and loser objects for easier reference
         const winner =
           game.player1.id === winnerId ? game.player1 : game.player2;
         const loser =
           game.player1.id === loserId ? game.player1 : game.player2;
 
-        // Update winner stats (skip bot)
         if (winner && !winner.isBot) {
           await prisma.player.updateMany({
             where: { id: winner.id },
@@ -377,7 +391,6 @@ export class GameHandler {
           });
         }
 
-        // Update loser stats (skip bot)
         if (loser && !loser.isBot && loserId && loserId !== winnerId) {
           await prisma.player.updateMany({
             where: { id: loser.id },
@@ -392,7 +405,6 @@ export class GameHandler {
         );
       }
 
-      // --- 💾 Save Game Record in Database ---
       await prisma.game.create({
         data: {
           id: game.id,
@@ -407,14 +419,12 @@ export class GameHandler {
         },
       });
 
-      // --- 📢 Emit Game Over Event ---
       this.io.to(game.id).emit("game_over", {
         winner: winnerId,
         isDraw,
         board: game.board,
       });
 
-      // --- 📊 Analytics ---
       await analyticsService.gameEnded(
         game.id,
         winnerId || undefined,
@@ -422,7 +432,6 @@ export class GameHandler {
         game.player2?.isBot || false
       );
 
-      // --- 🧹 Cleanup ---
       setTimeout(() => gameService.deleteGame(game.id), 5000);
     } catch (error) {
       logger.error(`❌ Error in handleGameEnd for game ${game.id}:`, error);
@@ -436,7 +445,6 @@ export class GameHandler {
     try {
       const { gameId, playerId } = data;
 
-      // Validate game ID
       const gameIdValidation = Validator.isValidGameId(gameId);
       if (!gameIdValidation.valid) {
         socket.emit('error', { message: gameIdValidation.error });
@@ -458,7 +466,6 @@ export class GameHandler {
         return;
       }
 
-      // Update socket ID
       player.socketId = socket.id;
       socket.join(gameId);
 
@@ -486,10 +493,8 @@ export class GameHandler {
   private handleDisconnect(socket: Socket): void {
     logger.info(`Client disconnected: ${socket.id}`);
 
-    // Remove from matchmaking queue
     matchmakingService.removePlayerFromQueue(socket.id);
 
-    // Handle disconnect in active games
     const games = gameService.getAllActiveGames();
     const game = games.find(
       (g) =>
@@ -516,7 +521,6 @@ export class GameHandler {
 
         analyticsService.playerDisconnected(game.id, player.id);
 
-        // Notify opponent
         const opponent =
           player.id === game.player1.id ? game.player2 : game.player1;
         if (opponent && !opponent.isBot) {
