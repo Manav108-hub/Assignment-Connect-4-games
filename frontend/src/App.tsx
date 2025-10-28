@@ -16,7 +16,7 @@ function App() {
   const [error, setError] = useState<string>('');
   const [selectedColumn, setSelectedColumn] = useState<number>(3);
   const [matchedOpponent, setMatchedOpponent] = useState<string>('');
-  
+
   const isProcessingMove = useRef(false);
 
   useEffect(() => {
@@ -40,16 +40,16 @@ function App() {
 
     socket.on('game_found', (data) => {
       console.log('🎮 Game found!', data);
-      
+
       const board: CellValue[][] = Array(6)
         .fill(null)
         .map(() => Array(7).fill('empty'));
 
       const myPlayerNumber = data.playerNumber;
       const isMyTurn = data.currentTurn === myPlayerNumber;
-      
+
       console.log(`👤 I am ${myPlayerNumber}, Current turn: ${data.currentTurn}, My turn: ${isMyTurn}`);
-      
+
       setGameState({
         gameId: data.gameId,
         playerId: data.playerId,
@@ -71,9 +71,9 @@ function App() {
 
     socket.on('move_made', (data) => {
       console.log('📥 Move made:', data);
-      
+
       isProcessingMove.current = false;
-      
+
       setGameState((prev) => {
         if (!prev) return null;
 
@@ -94,9 +94,9 @@ function App() {
 
     socket.on('game_over', (data) => {
       console.log('🏁 Game over:', data);
-      
+
       isProcessingMove.current = false;
-      
+
       setGameState((prev) => {
         if (!prev) return null;
         return {
@@ -115,13 +115,13 @@ function App() {
 
     socket.on('game_rejoined', (data) => {
       console.log('🔄 Rejoined game:', data);
-      
+
       setGameState((prev) => {
         if (!prev) return null;
-        
+
         const myPlayerNumber = data.playerNumber;
         const isMyTurn = data.currentTurn === myPlayerNumber;
-        
+
         return {
           ...prev,
           board: data.board,
@@ -136,9 +136,9 @@ function App() {
     socket.on('error', (data: { message: string }) => {
       console.error('❌ Error from server:', data);
       setError(data.message);
-      
+
       isProcessingMove.current = false;
-      
+
       setTimeout(() => setError(''), 5000);
     });
 
@@ -175,7 +175,7 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appState, gameState, selectedColumn]);
 
   const handleLogin = () => {
@@ -234,10 +234,10 @@ function App() {
           <div className="login-section">
             <div className="login-card">
               <h1 className="main-title">
-                <span className="game-icon">🎮</span>
+                <img src="/logo.png" alt="Connect 4" className="game-logo-img" />
                 Connect Four
               </h1>
-              
+
               <div className="login-form">
                 <h2>Enter Your Name</h2>
                 <input
@@ -250,7 +250,7 @@ function App() {
                   className="username-input"
                 />
                 {error && <div className="error-message">{error}</div>}
-                
+
                 <button
                   onClick={handleLogin}
                   disabled={!username.trim()}

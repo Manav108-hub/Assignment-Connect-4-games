@@ -1,4 +1,4 @@
-import { getConsumer } from '../config/kafka';
+import { getKafkaConsumer, isKafkaEnabled } from '../config/kafka';
 import { AnalyticsEvent } from '../models/types';
 import { logger } from '../utils/logger';
 
@@ -13,30 +13,36 @@ class AnalyticsConsumer {
   };
 
   async start(): Promise<void> {
-  try {
-    const consumer = await getConsumer();
-    if (!consumer) {
-      logger.info('⚠️  Analytics consumer disabled (Kafka unavailable)');
-      return;
+    try {
+      // Check if Kafka is enabled
+      if (!isKafkaEnabled()) {
+        logger.info('⚠️  Analytics consumer disabled (Kafka unavailable)');
+        return;
+      }
+
+      const consumer = getKafkaConsumer();
+      if (!consumer) {
+        logger.info('⚠️  Analytics consumer disabled (Kafka unavailable)');
+        return;
+      }
+
+      await consumer.run({
+        eachMessage: async ({ topic, partition, message }) => {
+          try {
+            if (!message.value) return;
+            const event: AnalyticsEvent = JSON.parse(message.value.toString());
+            this.processEvent(event);
+          } catch (error) {
+            logger.error('Error processing analytics message:', error);
+          }
+        },
+      });
+
+      logger.info('✅ Analytics consumer started');
+    } catch (error) {
+      logger.warn('⚠️  Analytics consumer disabled (Kafka unavailable)');
     }
-
-    await consumer.run({
-      eachMessage: async ({ topic, partition, message }) => {
-        try {
-          if (!message.value) return;
-          const event: AnalyticsEvent = JSON.parse(message.value.toString());
-          this.processEvent(event);
-        } catch (error) {
-          logger.error('Error processing analytics message:', error);
-        }
-      },
-    });
-
-    logger.info('✅ Analytics consumer started');
-  } catch (error) {
-    logger.warn('⚠️  Analytics consumer disabled (Kafka unavailable)');
   }
-}
 
   private processEvent(event: AnalyticsEvent): void {
     switch (event.eventType) {

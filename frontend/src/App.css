@@ -744,3 +744,63 @@ input {
     transform: translateY(0);
   }
 }
+
+.game-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+/* Floating animation for logo */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Main title with logo */
+.main-title {
+  font-size: 44px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00b4d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Game header logo (smaller) */
+.game-header .game-logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Responsive logo sizes */
+@media (max-width: 768px) {
+  .game-logo-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .game-header .game-logo-img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-logo-img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .game-header .game-logo-img {
+    width: 30px;
+    height: 30px;
+  }
+}

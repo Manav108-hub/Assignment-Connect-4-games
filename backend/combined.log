@@ -893,3 +893,282 @@ The table `public.Player` does not exist in the current database.
 2025-10-28 07:00:51 [INFO]: Game b9a07668-db1e-4271-a9cf-c9f12955d5c1 deleted
 2025-10-28 07:00:51 [INFO]: Client disconnected: 4S5LCACgVG4zok99AAAJ
 2025-10-28 07:00:51 [INFO]: Client disconnected: 4S5LCACgVG4zok99AAAJ (anonymous) - Reason: client namespace disconnect
+2025-10-28 07:04:56 [INFO]: Shutting down server...
+2025-10-28 07:04:56 [INFO]: HTTP server closed
+2025-10-28 07:04:56 [INFO]: Shutting down server...
+2025-10-28 07:04:56 [INFO]: HTTP server closed
+2025-10-28 07:04:58 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:04:58 [INFO]: ✅ Database connected successfully
+2025-10-28 07:04:58 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 07:04:58 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:04:58 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:06:29 [INFO]: Shutting down server...
+2025-10-28 07:06:29 [INFO]: HTTP server closed
+2025-10-28 07:06:29 [INFO]: Shutting down server...
+2025-10-28 07:06:29 [INFO]: HTTP server closed
+2025-10-28 07:06:42 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:06:42 [INFO]: ✅ Database connected successfully
+2025-10-28 07:06:42 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 07:06:42 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:06:42 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:07:35 [INFO]: Shutting down server...
+2025-10-28 07:07:35 [INFO]: HTTP server closed
+2025-10-28 07:07:35 [INFO]: Shutting down server...
+2025-10-28 07:07:35 [INFO]: HTTP server closed
+2025-10-28 07:10:24 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:10:24 [INFO]: ✅ Database connected successfully
+2025-10-28 07:10:24 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:10:24 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:10:27 [INFO]: Shutting down server...
+2025-10-28 07:10:27 [INFO]: HTTP server closed
+2025-10-28 07:10:27 [INFO]: Shutting down server...
+2025-10-28 07:10:27 [INFO]: HTTP server closed
+2025-10-28 07:10:30 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:10:30 [INFO]: ✅ Database connected successfully
+2025-10-28 07:10:30 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:10:30 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:12:07 [INFO]: Shutting down server...
+2025-10-28 07:12:07 [INFO]: HTTP server closed
+2025-10-28 07:12:07 [INFO]: Database disconnected
+2025-10-28 07:12:07 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:12:07 [INFO]: ✅ Database connected successfully
+2025-10-28 07:12:07 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:12:07 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:12:13 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:12:13 [INFO]: ✅ Database connected successfully
+2025-10-28 07:12:36 [INFO]: Shutting down server...
+2025-10-28 07:12:36 [INFO]: HTTP server closed
+2025-10-28 07:12:36 [INFO]: Shutting down server...
+2025-10-28 07:12:36 [INFO]: HTTP server closed
+2025-10-28 07:12:37 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:12:37 [INFO]: ✅ Database connected successfully
+2025-10-28 07:12:37 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:12:37 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:12:51 [INFO]: Shutting down server...
+2025-10-28 07:12:51 [INFO]: HTTP server closed
+2025-10-28 07:12:51 [INFO]: Shutting down server...
+2025-10-28 07:12:51 [INFO]: HTTP server closed
+2025-10-28 07:12:51 [INFO]: Database disconnected
+2025-10-28 07:13:36 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:13:36 [INFO]: ✅ Database connected successfully
+2025-10-28 07:13:36 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 07:13:36 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:14:27 [INFO]: Shutting down server...
+2025-10-28 07:14:27 [INFO]: HTTP server closed
+2025-10-28 07:14:27 [INFO]: Database disconnected
+2025-10-28 07:14:27 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:14:27 [INFO]: ✅ Database connected successfully
+2025-10-28 07:14:27 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 07:14:27 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 07:14:27 [INFO]: 🔌 Connecting producer...
+2025-10-28 07:14:27 [INFO]: ✅ Producer connected!
+2025-10-28 07:14:27 [INFO]: 🔌 Connecting admin...
+2025-10-28 07:14:27 [INFO]: ✅ Admin connected!
+2025-10-28 07:14:27 [INFO]: 📋 Listing topics...
+2025-10-28 07:14:27 [INFO]: 📋 Existing topics: game-analytics
+2025-10-28 07:14:27 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 07:14:27 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 07:14:27 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 07:14:29 [INFO]: ✅ Analytics consumer started
+2025-10-28 07:14:29 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:14:38 [INFO]: Shutting down server...
+2025-10-28 07:14:38 [INFO]: HTTP server closed
+2025-10-28 07:14:38 [INFO]: Shutting down server...
+2025-10-28 07:14:38 [INFO]: HTTP server closed
+2025-10-28 07:14:38 [INFO]: Database disconnected
+2025-10-28 07:14:38 [INFO]: Database disconnected
+2025-10-28 07:14:38 [INFO]: Kafka producer disconnected
+2025-10-28 07:14:38 [INFO]: Kafka producer disconnected
+2025-10-28 07:14:43 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:14:43 [INFO]: ✅ Database connected successfully
+2025-10-28 07:14:43 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 07:14:43 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 07:14:43 [INFO]: 🔌 Connecting producer...
+2025-10-28 07:14:43 [INFO]: ✅ Producer connected!
+2025-10-28 07:14:43 [INFO]: 🔌 Connecting admin...
+2025-10-28 07:14:43 [INFO]: ✅ Admin connected!
+2025-10-28 07:14:43 [INFO]: 📋 Listing topics...
+2025-10-28 07:14:43 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 07:14:43 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 07:14:43 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 07:14:43 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 07:15:04 [INFO]: ✅ Analytics consumer started
+2025-10-28 07:15:04 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:15:05 [INFO]: Shutting down server...
+2025-10-28 07:15:05 [INFO]: HTTP server closed
+2025-10-28 07:15:05 [INFO]: Database disconnected
+2025-10-28 07:15:05 [INFO]: Kafka producer disconnected
+2025-10-28 07:15:09 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:15:09 [INFO]: ✅ Database connected successfully
+2025-10-28 07:15:09 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 07:15:09 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 07:15:09 [INFO]: 🔌 Connecting producer...
+2025-10-28 07:15:09 [INFO]: ✅ Producer connected!
+2025-10-28 07:15:09 [INFO]: 🔌 Connecting admin...
+2025-10-28 07:15:09 [INFO]: ✅ Admin connected!
+2025-10-28 07:15:09 [INFO]: 📋 Listing topics...
+2025-10-28 07:15:09 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 07:15:09 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 07:15:09 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 07:15:09 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 07:15:34 [INFO]: ✅ Analytics consumer started
+2025-10-28 07:15:34 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:16:51 [INFO]: New connection: Yd7EF_4KAm-WjpNDAAAB from ::1
+2025-10-28 07:16:51 [INFO]: Client connected: Yd7EF_4KAm-WjpNDAAAB
+2025-10-28 07:16:51 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 07:16:51 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 07:16:51 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 07:17:01 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 07:17:01 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 07:17:01 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 07:17:01 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 07:17:04 [INFO]: Game created: 1f1d3922-f5be-43d6-9aa6-1373a7d53fe4 by player manav
+2025-10-28 07:17:04 [INFO]: Player Bot joined game 1f1d3922-f5be-43d6-9aa6-1373a7d53fe4
+2025-10-28 07:17:04 [INFO]: ✅ Bot game started: 1f1d3922-f5be-43d6-9aa6-1373a7d53fe4 - manav vs Bot
+2025-10-28 07:17:04 [INFO]: 📊 Analytics event sent: game_started
+2025-10-28 07:17:04 [INFO]: 📊 Game started: manav vs Bot (Bot)
+2025-10-28 07:17:07 [INFO]: 🎯 manav (player1) making move at column 2
+2025-10-28 07:17:07 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:07 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:07 [DEBUG]: Bot choosing center column 3
+2025-10-28 07:17:07 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 07:17:07 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:21 [INFO]: 🎯 manav (player1) making move at column 2
+2025-10-28 07:17:21 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:21 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:21 [DEBUG]: Bot choosing center column 3
+2025-10-28 07:17:21 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 07:17:21 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:22 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 07:17:22 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:22 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:23 [DEBUG]: Bot choosing center column 3
+2025-10-28 07:17:23 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 07:17:23 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:24 [INFO]: 🎯 manav (player1) making move at column 1
+2025-10-28 07:17:24 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:24 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:24 [DEBUG]: Bot choosing center column 3
+2025-10-28 07:17:24 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 07:17:25 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:26 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 07:17:26 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:26 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:27 [DEBUG]: Bot choosing strategic column 6
+2025-10-28 07:17:27 [INFO]: 🤖 Bot making move at column 6
+2025-10-28 07:17:27 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:28 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 07:17:28 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:28 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:29 [DEBUG]: Bot choosing strategic column 6
+2025-10-28 07:17:29 [INFO]: 🤖 Bot making move at column 6
+2025-10-28 07:17:29 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:30 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 07:17:30 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:30 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:30 [DEBUG]: Bot choosing strategic column 2
+2025-10-28 07:17:30 [INFO]: 🤖 Bot making move at column 2
+2025-10-28 07:17:30 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:31 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 07:17:31 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:31 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:32 [DEBUG]: Bot blocking opponent at column 4
+2025-10-28 07:17:32 [INFO]: 🤖 Bot making move at column 4
+2025-10-28 07:17:32 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:36 [INFO]: 🎯 manav (player1) making move at column 1
+2025-10-28 07:17:36 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:36 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:37 [DEBUG]: Bot choosing strategic column 5
+2025-10-28 07:17:37 [INFO]: 🤖 Bot making move at column 5
+2025-10-28 07:17:37 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:39 [INFO]: 🎯 manav (player1) making move at column 1
+2025-10-28 07:17:39 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:39 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:39 [DEBUG]: Bot blocking opponent at column 1
+2025-10-28 07:17:39 [INFO]: 🤖 Bot making move at column 1
+2025-10-28 07:17:39 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:44 [INFO]: 🎯 manav (player1) making move at column 5
+2025-10-28 07:17:44 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 07:17:44 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:44 [DEBUG]: Bot choosing winning move: column 2
+2025-10-28 07:17:44 [INFO]: 🤖 Bot making move at column 2
+2025-10-28 07:17:44 [INFO]: Game 1f1d3922-f5be-43d6-9aa6-1373a7d53fe4 won by Bot
+2025-10-28 07:17:44 [INFO]: 📊 Analytics event sent: move_made
+2025-10-28 07:17:44 [INFO]: 🏆 Game 1f1d3922-f5be-43d6-9aa6-1373a7d53fe4 won by Bot (defeated manav)
+2025-10-28 07:17:44 [INFO]: 📊 Analytics event sent: game_ended
+2025-10-28 07:17:44 [INFO]: 📊 Game ended: Winner: d0638cc2-01ca-471a-8752-a4af12451812, Duration: 40s
+2025-10-28 07:17:47 [INFO]: Client disconnected: Yd7EF_4KAm-WjpNDAAAB
+2025-10-28 07:17:47 [INFO]: Client disconnected: Yd7EF_4KAm-WjpNDAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 07:17:49 [INFO]: Game 1f1d3922-f5be-43d6-9aa6-1373a7d53fe4 deleted
+2025-10-28 07:18:58 [INFO]: Shutting down server...
+2025-10-28 07:18:58 [INFO]: HTTP server closed
+2025-10-28 07:18:58 [INFO]: Shutting down server...
+2025-10-28 07:18:58 [INFO]: HTTP server closed
+2025-10-28 07:18:58 [INFO]: Database disconnected
+2025-10-28 07:18:58 [INFO]: Database disconnected
+2025-10-28 07:18:58 [INFO]: Kafka producer disconnected
+2025-10-28 07:18:58 [INFO]: Kafka producer disconnected
+2025-10-28 07:18:58 [INFO]: Shutting down server...
+2025-10-28 07:18:58 [INFO]: HTTP server closed
+2025-10-28 07:18:58 [INFO]: Database disconnected
+2025-10-28 07:18:58 [INFO]: Kafka producer disconnected

@@ -4,7 +4,7 @@ import { Server } from 'socket.io';
 import cors from 'cors';
 import { config } from './config/env';
 import { connectDatabase, disconnectDatabase } from './config/database';
-import { disconnectKafka } from './config/kafka';
+import { initKafkaProducer, initKafkaConsumer, disconnectKafka } from './config/kafka';
 import { logger } from './utils/logger';
 import leaderboardRoutes from './routes/leaderboard.routes';
 import gameRoutes from './routes/game.routes';
@@ -44,6 +44,10 @@ const startServer = async () => {
   try {
     // Connect to database
     await connectDatabase();
+
+    // ✅ Initialize Kafka producer and consumer
+    await initKafkaProducer();
+    await initKafkaConsumer();
 
     // Start Kafka analytics consumer
     await analyticsConsumer.start();

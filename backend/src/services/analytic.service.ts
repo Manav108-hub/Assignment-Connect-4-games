@@ -1,31 +1,37 @@
-import { getProducer } from '../config/kafka';
+import { getKafkaProducer, isKafkaEnabled } from '../config/kafka';
 import { AnalyticsEvent } from '../models/types';
 import { config } from '../config/env';
 import { logger } from '../utils/logger';
 
 class AnalyticsService {
   async sendEvent(event: AnalyticsEvent): Promise<void> {
-  try {
-    const producer = await getProducer();
-    if (!producer) {
-      // Kafka not available, skip silently
-      return;
+    try {
+      // Check if Kafka is enabled
+      if (!isKafkaEnabled()) {
+        return;
+      }
+
+      const producer = getKafkaProducer();
+      if (!producer) {
+        return;
+      }
+
+      await producer.send({
+        topic: config.kafka.topic,
+        messages: [
+          {
+            key: event.gameId,
+            value: JSON.stringify(event),
+          },
+        ],
+      });
+
+      logger.info(`📊 Analytics event sent: ${event.eventType}`);
+    } catch (error) {
+      // Fail silently - analytics are not critical
+      logger.debug('Analytics event skipped (Kafka unavailable)');
     }
-    await producer.send({
-      topic: config.kafka.topic,
-      messages: [
-        {
-          key: event.gameId,
-          value: JSON.stringify(event),
-        },
-      ],
-    });
-    logger.debug(`Analytics event sent: ${event.eventType}`);
-  } catch (error) {
-    // Fail silently - analytics are not critical
-    logger.debug('Analytics event skipped (Kafka unavailable)');
   }
-}
 
   async gameStarted(
     gameId: string,
