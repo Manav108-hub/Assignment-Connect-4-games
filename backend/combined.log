@@ -582,3 +582,62 @@ The table `public.Player` does not exist in the current database.
 2025-10-27 17:56:03 [INFO]: HTTP server closed
 2025-10-27 17:56:03 [INFO]: Shutting down server...
 2025-10-27 17:56:03 [INFO]: HTTP server closed
+2025-10-28 05:32:53 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 05:32:53 [INFO]: ✅ Database connected successfully
+2025-10-28 05:32:53 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 05:32:53 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 05:32:53 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 05:33:33 [INFO]: New connection: gFCB69N6tUOTVyHZAAAB from ::1
+2025-10-28 05:33:33 [INFO]: Client connected: gFCB69N6tUOTVyHZAAAB
+2025-10-28 05:33:33 [INFO]: ➕ Player sehaj added to matchmaking queue
+2025-10-28 05:33:33 [INFO]: ⏳ sehaj waiting for opponent...
+2025-10-28 05:33:43 [INFO]: ⏰ Timeout reached for sehaj, calling bot match callback
+2025-10-28 05:33:43 [INFO]: 🤖 Creating bot game for sehaj
+2025-10-28 05:33:43 [INFO]: Game created: c6a2f23a-7e57-4aa8-b878-c4d796a86dd3 by player sehaj
+2025-10-28 05:33:43 [INFO]: Player Bot joined game c6a2f23a-7e57-4aa8-b878-c4d796a86dd3
+2025-10-28 05:33:43 [INFO]: ✅ Bot game emitted to sehaj: c6a2f23a-7e57-4aa8-b878-c4d796a86dd3
+2025-10-28 05:33:53 [DEBUG]: Bot choosing center column 3
+2025-10-28 05:33:56 [DEBUG]: Bot choosing center column 3
+2025-10-28 05:33:58 [DEBUG]: Bot choosing center column 3
+2025-10-28 05:34:00 [DEBUG]: Bot choosing winning move: column 3
+2025-10-28 05:34:00 [INFO]: Game c6a2f23a-7e57-4aa8-b878-c4d796a86dd3 won by Bot
+2025-10-28 05:34:00 [INFO]: 🏆 Game c6a2f23a-7e57-4aa8-b878-c4d796a86dd3 won by Bot (defeated sehaj)
+2025-10-28 05:34:05 [INFO]: Game c6a2f23a-7e57-4aa8-b878-c4d796a86dd3 deleted
+2025-10-28 05:34:07 [INFO]: Client disconnected: gFCB69N6tUOTVyHZAAAB
+2025-10-28 05:34:07 [INFO]: Client disconnected: gFCB69N6tUOTVyHZAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 05:34:21 [INFO]: New connection: gyIauqrx64jcp4krAAAD from ::1
+2025-10-28 05:34:21 [INFO]: Client connected: gyIauqrx64jcp4krAAAD
+2025-10-28 05:34:21 [INFO]: ➕ Player sehaj added to matchmaking queue
+2025-10-28 05:34:21 [INFO]: ⏳ sehaj waiting for opponent...
+2025-10-28 05:34:31 [INFO]: ⏰ Timeout reached for sehaj, calling bot match callback
+2025-10-28 05:34:31 [INFO]: 🤖 Creating bot game for sehaj
+2025-10-28 05:34:31 [INFO]: Game created: f92c81b9-4bca-48f0-93f7-a18a14884cfb by player sehaj
+2025-10-28 05:34:31 [INFO]: Player Bot joined game f92c81b9-4bca-48f0-93f7-a18a14884cfb
+2025-10-28 05:34:31 [INFO]: ✅ Bot game emitted to sehaj: f92c81b9-4bca-48f0-93f7-a18a14884cfb
+2025-10-28 05:34:34 [DEBUG]: Bot choosing center column 3
+2025-10-28 05:34:36 [DEBUG]: Bot choosing center column 3
+2025-10-28 05:34:38 [DEBUG]: Bot choosing strategic column 0
+2025-10-28 05:34:40 [DEBUG]: Bot choosing strategic column 3
+2025-10-28 05:34:42 [DEBUG]: Bot creating opportunity at column 3
+2025-10-28 05:34:44 [DEBUG]: Bot choosing strategic column 4
+2025-10-28 05:34:45 [DEBUG]: Bot blocking opponent at column 2
+2025-10-28 05:34:47 [DEBUG]: Bot blocking opponent at column 1
+2025-10-28 05:34:51 [DEBUG]: Bot creating opportunity at column 1
+2025-10-28 05:34:53 [DEBUG]: Bot creating opportunity at column 5
+2025-10-28 05:34:55 [DEBUG]: Bot choosing winning move: column 6
+2025-10-28 05:34:55 [INFO]: Game f92c81b9-4bca-48f0-93f7-a18a14884cfb won by Bot
+2025-10-28 05:34:55 [INFO]: 🏆 Game f92c81b9-4bca-48f0-93f7-a18a14884cfb won by Bot (defeated sehaj)
+2025-10-28 05:35:00 [INFO]: Game f92c81b9-4bca-48f0-93f7-a18a14884cfb deleted
+2025-10-28 05:35:39 [INFO]: Client disconnected: gyIauqrx64jcp4krAAAD
+2025-10-28 05:35:39 [INFO]: Client disconnected: gyIauqrx64jcp4krAAAD (anonymous) - Reason: transport close
+2025-10-28 05:35:56 [INFO]: Shutting down server...
+2025-10-28 05:35:56 [INFO]: HTTP server closed
+2025-10-28 05:35:56 [INFO]: Shutting down server...
+2025-10-28 05:35:56 [INFO]: HTTP server closed
+2025-10-28 05:35:56 [INFO]: Database disconnected
