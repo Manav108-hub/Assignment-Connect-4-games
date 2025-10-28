@@ -38,6 +38,11 @@ function App() {
       setAppState('matched');
     });
 
+    socket.on('join_room', (roomId: string) => {
+      console.log('🚪 Joining room:', roomId);
+      // Socket automatically joins room on backend
+    });
+
     socket.on('game_found', (data) => {
       console.log('🎮 Game found!', data);
 
@@ -146,6 +151,7 @@ function App() {
       socket.off('connect');
       socket.off('waiting_for_opponent');
       socket.off('match_found');
+      socket.off('join_room');
       socket.off('game_found');
       socket.off('move_made');
       socket.off('game_over');
@@ -184,9 +190,24 @@ function App() {
       return;
     }
 
+    console.log('🔌 Connecting to socket...');
     connectSocket();
+    
+    // Wait for connection before emitting
     const socket = getSocket();
-    socket.emit('find_match', { username: username.trim() });
+    
+    if (socket.connected) {
+      console.log('✅ Already connected, emitting find_match');
+      // CRITICAL FIX: Send as JSON string for Go backend
+      socket.emit('find_match', JSON.stringify({ username: username.trim() }));
+    } else {
+      console.log('⏳ Waiting for connection...');
+      socket.once('connect', () => {
+        console.log('✅ Connected! Now emitting find_match');
+        // CRITICAL FIX: Send as JSON string for Go backend
+        socket.emit('find_match', JSON.stringify({ username: username.trim() }));
+      });
+    }
   };
 
   const handleColumnClick = (col: number) => {
@@ -206,7 +227,7 @@ function App() {
     }
 
     isProcessingMove.current = true;
-    console.log(`🎯 Making move at column ${col}, locked=true`);
+    console.log(`🎯 Making move at column ${col}`);
 
     setGameState(prev => {
       if (!prev) return null;
@@ -214,7 +235,11 @@ function App() {
     });
 
     const socket = getSocket();
-    socket.emit('make_move', { gameId: gameState.gameId, column: col });
+    // CRITICAL FIX: Send as JSON string for Go backend
+    socket.emit('make_move', JSON.stringify({ 
+      gameId: gameState.gameId, 
+      column: col 
+    }));
   };
 
   const handlePlayAgain = () => {

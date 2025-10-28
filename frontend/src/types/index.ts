@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export type CellValue = 'empty' | 'player1' | 'player2';
 export type PlayerNumber = 'player1' | 'player2';
 export type GameStatus = 'active' | 'finished';
@@ -22,6 +24,7 @@ export interface GameState {
 }
 
 export interface LeaderboardEntry {
+  winRate: ReactNode;
   username: string;
   wins: number;
   losses: number;
