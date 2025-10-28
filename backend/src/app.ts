@@ -2,7 +2,7 @@ import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
-import { config } from './config/env';
+import { config } from './config/env.js';
 import { connectDatabase, disconnectDatabase } from './config/database';
 import { initKafkaProducer, initKafkaConsumer, disconnectKafka } from './config/kafka';
 import { logger } from './utils/logger';
