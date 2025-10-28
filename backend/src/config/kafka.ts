@@ -1,6 +1,6 @@
 import { Kafka, Producer, Consumer, logLevel } from 'kafkajs';
-import { config } from './env';
-import { logger } from '../utils/logger';
+import { config } from './env.js';
+import { logger } from '../utils/logger.js';
 
 let kafkaProducer: Producer | null = null;
 let kafkaConsumer: Consumer | null = null;

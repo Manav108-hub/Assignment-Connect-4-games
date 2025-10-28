@@ -1,6 +1,6 @@
-import { CellValue } from '../models/types';
-import { config } from '../config/env';
-import { logger } from '../utils/logger';
+import { CellValue } from '../models/types.js';
+import { config } from '../config/env.js';
+import { logger } from '../utils/logger.js';
 
 class BotService {
   /**

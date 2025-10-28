@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { gameController } from "../controller/game.controller";
+import { gameController } from "../controller/game.controller.js";
 import { Server, Socket } from "socket.io";
-import { GameHandler } from "../websocket/game.handler";
-import { logger } from "../utils/logger";
+import { GameHandler } from "../websocket/game.handler.js";
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 

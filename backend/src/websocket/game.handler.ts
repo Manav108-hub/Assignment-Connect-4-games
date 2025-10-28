@@ -1,14 +1,14 @@
 import { Server, Socket } from 'socket.io';
 import { v4 as uuidv4 } from 'uuid';
-import { gameService } from '../services/game.service';
-import { matchmakingService } from '../services/matchmaking.service';
-import { botService } from '../services/bot.service';
-import { analyticsService } from '../services/analytic.service';
-import { prisma } from '../config/database';
-import { Player } from '../models/types';
-import { config } from '../config/env';
-import { logger } from '../utils/logger';
-import { Validator } from '../utils/validations';
+import { gameService } from '../services/game.service.js';
+import { matchmakingService } from '../services/matchmaking.service.js';
+import { botService } from '../services/bot.service.js';
+import { analyticsService } from '../services/analytic.service.js';
+import { prisma } from '../config/database.js';
+import { Player } from '../models/types.js';
+import { config } from '../config/env.js';
+import { logger } from '../utils/logger.js';
+import { Validator } from '../utils/validations.js';
 
 export class GameHandler {
   private io: Server;

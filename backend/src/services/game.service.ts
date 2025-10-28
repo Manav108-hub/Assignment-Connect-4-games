@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
-import { GameState, Player, MoveResult, Position, CellValue } from '../models/types';
-import { config } from '../config/env';
-import { logger } from '../utils/logger';
+import { GameState, Player, MoveResult, Position, CellValue } from '../models/types.js';
+import { config } from '../config/env.js';
+import { logger } from '../utils/logger.js';
 
 class GameService {
   private games: Map<string, GameState> = new Map();

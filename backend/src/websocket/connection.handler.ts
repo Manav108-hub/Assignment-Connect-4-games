@@ -1,6 +1,6 @@
 import { Server, Socket } from 'socket.io';
-import { GameHandler } from './game.handler';
-import { logger } from '../utils/logger';
+import { GameHandler } from './game.handler.js';
+import { logger } from '../utils/logger.js';
 
 export class ConnectionHandler {
   private io: Server;

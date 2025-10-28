@@ -1,6 +1,6 @@
-import { getKafkaConsumer, isKafkaEnabled } from '../config/kafka';
-import { AnalyticsEvent } from '../models/types';
-import { logger } from '../utils/logger';
+import { getKafkaConsumer, isKafkaEnabled } from '../config/kafka.js';
+import { AnalyticsEvent } from '../models/types.js';
+import { logger } from '../utils/logger.js';
 
 class AnalyticsConsumer {
   private metrics = {

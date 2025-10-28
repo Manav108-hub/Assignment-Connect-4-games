@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { prisma } from '../config/database';
-import { logger } from '../utils/logger';
+import { prisma } from '../config/database.js';
+import { logger } from '../utils/logger.js';
 
 export class LeaderboardController {
   async getLeaderboard(req: Request, res: Response): Promise<void> {

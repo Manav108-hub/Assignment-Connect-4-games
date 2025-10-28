@@ -1172,3 +1172,23 @@ The table `public.Player` does not exist in the current database.
 2025-10-28 07:18:58 [INFO]: HTTP server closed
 2025-10-28 07:18:58 [INFO]: Database disconnected
 2025-10-28 07:18:58 [INFO]: Kafka producer disconnected
+2025-10-28 13:45:34 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 13:45:34 [ERROR]: ❌ Database connection failed: [1;91merror[0m: [1mEnvironment variable not found: DATABASE_URL.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "postgresql"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mEnvironment variable not found: DATABASE_URL.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "postgresql"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+    at async connectDatabase (file:///home/manav/assignment-emitrr/backend/dist/config/database.js:8:9)
+    at async startServer (file:///home/manav/assignment-emitrr/backend/dist/app.js:39:9)

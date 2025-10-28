@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { gameService } from '../services/game.service';
-import { logger } from '../utils/logger';
+import { gameService } from '../services/game.service.js';
+import { logger } from '../utils/logger.js';
 
 export class GameController {
   async getGameById(req: Request, res: Response): Promise<void> {

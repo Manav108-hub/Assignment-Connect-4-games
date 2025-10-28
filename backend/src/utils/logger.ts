@@ -1,5 +1,5 @@
 import winston from 'winston';
-import { config } from '../config/env';
+import { config } from '../config/env.js';
 
 const logFormat = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),

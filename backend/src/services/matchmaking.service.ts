@@ -1,6 +1,6 @@
-import { Player } from '../models/types';
-import { config } from '../config/env';
-import { logger } from '../utils/logger';
+import { Player } from '../models/types.js';
+import { config } from '../config/env.js';
+import { logger } from '../utils/logger.js';
 
 interface WaitingPlayer {
   player: Player;

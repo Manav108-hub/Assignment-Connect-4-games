@@ -1,7 +1,7 @@
-import { getKafkaProducer, isKafkaEnabled } from '../config/kafka';
-import { AnalyticsEvent } from '../models/types';
-import { config } from '../config/env';
-import { logger } from '../utils/logger';
+import { getKafkaProducer, isKafkaEnabled } from '../config/kafka.js';
+import { AnalyticsEvent } from '../models/types.js';
+import { config } from '../config/env.js';
+import { logger } from '../utils/logger.js';
 
 class AnalyticsService {
   async sendEvent(event: AnalyticsEvent): Promise<void> {
