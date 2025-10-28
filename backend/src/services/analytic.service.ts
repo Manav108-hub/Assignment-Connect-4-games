@@ -1,35 +1,66 @@
-import { getKafkaProducer, isKafkaEnabled } from '../config/kafka';
+// backend/src/services/analytic.service.ts
+// QStash replaces Kafka
+
 import { AnalyticsEvent } from '../models/types';
-import { config } from '../config/env';
 import { logger } from '../utils/logger';
 
 class AnalyticsService {
+  private qstashUrl = 'https://qstash.upstash.io/v2/publish';
+  private qstashToken = process.env.QSTASH_TOKEN;
+  private webhookUrl = process.env.QSTASH_WEBHOOK_URL;
+  private isEnabled = false;
+
+  constructor() {
+    logger.info(`🔍 QStash Config Check:`);
+    logger.info(`   Token: ${this.qstashToken ? 'SET ✅' : 'MISSING ❌'}`);
+    logger.info(`   Webhook URL: ${this.webhookUrl || 'MISSING ❌'}`);
+    
+    if (this.qstashToken && this.webhookUrl) {
+      this.isEnabled = true;
+      logger.info('✅ QStash analytics enabled');
+    } else {
+      logger.warn('⚠️  QStash not configured - analytics disabled');
+      if (!this.qstashToken) logger.warn('   Missing QSTASH_TOKEN');
+      if (!this.webhookUrl) logger.warn('   Missing QSTASH_WEBHOOK_URL');
+    }
+  }
+
   async sendEvent(event: AnalyticsEvent): Promise<void> {
+    if (!this.isEnabled) {
+      logger.debug('Analytics disabled, skipping event');
+      return;
+    }
+
     try {
-      // Check if Kafka is enabled
-      if (!isKafkaEnabled()) {
-        return;
-      }
-
-      const producer = getKafkaProducer();
-      if (!producer) {
-        return;
-      }
-
-      await producer.send({
-        topic: config.kafka.topic,
-        messages: [
-          {
-            key: event.gameId,
-            value: JSON.stringify(event),
-          },
-        ],
+      const targetUrl = this.webhookUrl!;
+      
+      logger.info(`📤 Sending to QStash for: ${targetUrl}`);
+      
+      const response = await fetch(this.qstashUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.qstashToken}`,
+          'Content-Type': 'application/json',
+          'Upstash-Forward': targetUrl,
+        },
+        body: JSON.stringify(event),
       });
 
-      logger.info(`📊 Analytics event sent: ${event.eventType}`);
-    } catch (error) {
-      // Fail silently - analytics are not critical
-      logger.debug('Analytics event skipped (Kafka unavailable)');
+      if (response.ok) {
+        const result = await response.json() as { messageId?: string };
+        logger.info(`📊 Analytics event sent to QStash: ${event.eventType}`);
+        if (result.messageId) {
+          logger.info(`   Message ID: ${result.messageId}`);
+        }
+      } else {
+        const errorText = await response.text();
+        logger.error(`❌ QStash publish failed (${response.status}): ${errorText}`);
+      }
+    } catch (error: any) {
+      logger.error(`❌ QStash error: ${error.message}`);
+      if (error.stack) {
+        logger.error(`   Stack: ${error.stack.split('\n')[0]}`);
+      }
     }
   }
 

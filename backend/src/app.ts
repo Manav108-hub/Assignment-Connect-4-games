@@ -10,6 +10,7 @@ import leaderboardRoutes from './routes/leaderboard.routes';
 import gameRoutes from './routes/game.routes';
 import { ConnectionHandler } from './websocket/connection.handler';
 import { analyticsConsumer } from './consumer/analytics.consumer';
+import analyticsRoutes from './routes/analytics.routes';
 
 const app = express();
 const httpServer = createServer(app);
@@ -34,6 +35,8 @@ app.get('/health', (req, res) => {
 // Routes
 app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/games', gameRoutes);
+
+app.use('/api/analytics', analyticsRoutes);
 
 // WebSocket connection handler
 const connectionHandler = new ConnectionHandler(io);

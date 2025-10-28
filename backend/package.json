@@ -5,10 +5,8 @@
   "main": "dist/app.js",
   "scripts": {
     "dev": "tsx watch src/app.ts",
-    "build": "tsc",
-    "start": "node dist/app.js",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev"
+    "build": "prisma generate && tsc",
+    "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "",

@@ -1172,3 +1172,334 @@ The table `public.Player` does not exist in the current database.
 2025-10-28 07:18:58 [INFO]: HTTP server closed
 2025-10-28 07:18:58 [INFO]: Database disconnected
 2025-10-28 07:18:58 [INFO]: Kafka producer disconnected
+2025-10-28 07:49:56 [INFO]: ✅ QStash analytics enabled
+2025-10-28 07:49:56 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 07:49:56 [INFO]: ✅ Database connected successfully
+2025-10-28 07:49:56 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 07:49:56 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 07:49:56 [INFO]: 🔌 Connecting producer...
+2025-10-28 07:49:56 [INFO]: ✅ Producer connected!
+2025-10-28 07:49:56 [INFO]: 🔌 Connecting admin...
+2025-10-28 07:49:56 [INFO]: ✅ Admin connected!
+2025-10-28 07:49:56 [INFO]: 📋 Listing topics...
+2025-10-28 07:49:56 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 07:49:56 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 07:49:56 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 07:49:56 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 07:49:56 [INFO]: ✅ Analytics consumer started
+2025-10-28 07:49:56 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 07:50:19 [INFO]: New connection: 5ClCO_A-rqZwvtsmAAAB from ::1
+2025-10-28 07:50:19 [INFO]: Client connected: 5ClCO_A-rqZwvtsmAAAB
+2025-10-28 07:50:19 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 07:50:19 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 07:50:19 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 07:50:29 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 07:50:29 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 07:50:29 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 07:50:29 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 07:50:32 [INFO]: Game created: 94263c86-3172-4fa1-acf5-727fbf77cfff by player manav
+2025-10-28 07:50:32 [INFO]: Player Bot joined game 94263c86-3172-4fa1-acf5-727fbf77cfff
+2025-10-28 07:50:32 [INFO]: ✅ Bot game started: 94263c86-3172-4fa1-acf5-727fbf77cfff - manav vs Bot
+2025-10-28 07:50:33 [DEBUG]: Analytics event skipped (QStash unavailable)
+2025-10-28 07:52:33 [INFO]: Client disconnected: 5ClCO_A-rqZwvtsmAAAB
+2025-10-28 07:52:33 [INFO]: Client disconnected: 5ClCO_A-rqZwvtsmAAAB (anonymous) - Reason: transport close
+2025-10-28 07:52:34 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 07:52:40 [INFO]: Shutting down server...
+2025-10-28 07:52:40 [INFO]: HTTP server closed
+2025-10-28 07:52:40 [INFO]: Shutting down server...
+2025-10-28 07:52:40 [INFO]: HTTP server closed
+2025-10-28 07:52:40 [INFO]: Database disconnected
+2025-10-28 07:52:40 [INFO]: Database disconnected
+2025-10-28 07:52:40 [INFO]: Kafka producer disconnected
+2025-10-28 07:52:40 [INFO]: Kafka producer disconnected
+2025-10-28 07:52:40 [INFO]: Shutting down server...
+2025-10-28 07:52:40 [INFO]: HTTP server closed
+2025-10-28 07:52:40 [INFO]: Database disconnected
+2025-10-28 07:52:40 [INFO]: Kafka producer disconnected
+2025-10-28 11:02:00 [INFO]: ✅ QStash analytics enabled
+2025-10-28 11:02:00 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 11:02:00 [INFO]: ✅ Database connected successfully
+2025-10-28 11:02:00 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 11:02:00 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 11:02:00 [INFO]: 🔌 Connecting producer...
+2025-10-28 11:02:00 [INFO]: ✅ Producer connected!
+2025-10-28 11:02:00 [INFO]: 🔌 Connecting admin...
+2025-10-28 11:02:00 [INFO]: ✅ Admin connected!
+2025-10-28 11:02:00 [INFO]: 📋 Listing topics...
+2025-10-28 11:02:00 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 11:02:00 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 11:02:00 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 11:02:00 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 11:02:00 [INFO]: ✅ Analytics consumer started
+2025-10-28 11:02:00 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 11:02:19 [INFO]: New connection: ExeRfmmNu6E4_BKkAAAB from ::1
+2025-10-28 11:02:19 [INFO]: Client connected: ExeRfmmNu6E4_BKkAAAB
+2025-10-28 11:02:19 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 11:02:19 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 11:02:19 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 11:02:29 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 11:02:29 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 11:02:29 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 11:02:29 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 11:02:32 [INFO]: Game created: a7254a74-26ce-4897-87a5-2353fd20a62b by player manav
+2025-10-28 11:02:32 [INFO]: Player Bot joined game a7254a74-26ce-4897-87a5-2353fd20a62b
+2025-10-28 11:02:32 [INFO]: ✅ Bot game started: a7254a74-26ce-4897-87a5-2353fd20a62b - manav vs Bot
+2025-10-28 11:02:33 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:36 [INFO]: 🎯 manav (player1) making move at column 2
+2025-10-28 11:02:36 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:36 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:37 [DEBUG]: Bot choosing center column 3
+2025-10-28 11:02:37 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 11:02:38 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:38 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 11:02:38 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:38 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:39 [DEBUG]: Bot choosing center column 3
+2025-10-28 11:02:39 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 11:02:39 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:40 [INFO]: 🎯 manav (player1) making move at column 1
+2025-10-28 11:02:40 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:40 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:41 [DEBUG]: Bot choosing center column 3
+2025-10-28 11:02:41 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 11:02:41 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:42 [INFO]: 🎯 manav (player1) making move at column 3
+2025-10-28 11:02:42 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:42 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:42 [DEBUG]: Bot choosing center column 3
+2025-10-28 11:02:42 [INFO]: 🤖 Bot making move at column 3
+2025-10-28 11:02:43 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:43 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 11:02:43 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:43 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:44 [DEBUG]: Bot choosing strategic column 0
+2025-10-28 11:02:44 [INFO]: 🤖 Bot making move at column 0
+2025-10-28 11:02:44 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:45 [INFO]: 🎯 manav (player1) making move at column 4
+2025-10-28 11:02:45 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:45 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:46 [DEBUG]: Bot choosing strategic column 2
+2025-10-28 11:02:46 [INFO]: 🤖 Bot making move at column 2
+2025-10-28 11:02:47 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:47 [INFO]: 🎯 manav (player1) making move at column 5
+2025-10-28 11:02:47 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:47 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:48 [DEBUG]: Bot choosing strategic column 2
+2025-10-28 11:02:48 [INFO]: 🤖 Bot making move at column 2
+2025-10-28 11:02:48 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:50 [INFO]: 🎯 manav (player1) making move at column 5
+2025-10-28 11:02:50 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 11:02:50 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:50 [DEBUG]: Bot choosing winning move: column 1
+2025-10-28 11:02:50 [INFO]: 🤖 Bot making move at column 1
+2025-10-28 11:02:50 [INFO]: Game a7254a74-26ce-4897-87a5-2353fd20a62b won by Bot
+2025-10-28 11:02:52 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:52 [INFO]: 🏆 Game a7254a74-26ce-4897-87a5-2353fd20a62b won by Bot (defeated manav)
+2025-10-28 11:02:52 [DEBUG]: QStash publish failed: {"error":"invalid destination url: endpoint resolves to a loopback address: ::1"}
+2025-10-28 11:02:57 [INFO]: Game a7254a74-26ce-4897-87a5-2353fd20a62b deleted
+2025-10-28 11:03:13 [INFO]: Client disconnected: ExeRfmmNu6E4_BKkAAAB
+2025-10-28 11:03:13 [INFO]: Client disconnected: ExeRfmmNu6E4_BKkAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 11:22:50 [INFO]: Shutting down server...
+2025-10-28 11:22:50 [INFO]: HTTP server closed
+2025-10-28 11:22:50 [INFO]: Shutting down server...
+2025-10-28 11:22:50 [INFO]: HTTP server closed
+2025-10-28 11:22:50 [INFO]: Database disconnected
+2025-10-28 11:22:50 [INFO]: Database disconnected
+2025-10-28 11:22:50 [INFO]: Kafka producer disconnected
+2025-10-28 11:22:50 [INFO]: Kafka producer disconnected
+2025-10-28 11:22:50 [INFO]: Shutting down server...
+2025-10-28 11:22:50 [INFO]: HTTP server closed
+2025-10-28 11:22:50 [INFO]: Database disconnected
+2025-10-28 11:22:50 [INFO]: Kafka producer disconnected
+2025-10-28 11:23:51 [INFO]: 🔍 QStash Config Check:
+2025-10-28 11:23:51 [INFO]:    Token: SET ✅
+2025-10-28 11:23:51 [INFO]:    Webhook URL: http://localhost:3001/api/analytics/webhook
+2025-10-28 11:23:51 [INFO]: ✅ QStash analytics enabled
+2025-10-28 11:23:51 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 11:23:51 [INFO]: ✅ Database connected successfully
+2025-10-28 11:23:51 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 11:23:51 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 11:23:51 [INFO]: 🔌 Connecting producer...
+2025-10-28 11:23:51 [INFO]: ✅ Producer connected!
+2025-10-28 11:23:51 [INFO]: 🔌 Connecting admin...
+2025-10-28 11:23:52 [INFO]: ✅ Admin connected!
+2025-10-28 11:23:52 [INFO]: 📋 Listing topics...
+2025-10-28 11:23:52 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 11:23:52 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 11:23:52 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 11:23:52 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 11:23:52 [INFO]: ✅ Analytics consumer started
+2025-10-28 11:23:52 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 11:24:11 [INFO]: New connection: Mp8NTO8677fDfJ-zAAAB from ::1
+2025-10-28 11:24:11 [INFO]: Client connected: Mp8NTO8677fDfJ-zAAAB
+2025-10-28 11:24:11 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 11:24:11 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 11:24:11 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 11:24:21 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 11:24:21 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 11:24:21 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 11:24:21 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 11:24:24 [INFO]: Game created: 0376f7be-97ae-4a9d-bb1a-138cd1815374 by player manav
+2025-10-28 11:24:24 [INFO]: Player Bot joined game 0376f7be-97ae-4a9d-bb1a-138cd1815374
+2025-10-28 11:24:24 [INFO]: ✅ Bot game started: 0376f7be-97ae-4a9d-bb1a-138cd1815374 - manav vs Bot
+2025-10-28 11:24:24 [INFO]: 📤 Sending to QStash: https://qstash.upstash.io/v2/publish/http%3A%2F%2Flocalhost%3A3001%2Fapi%2Fanalytics%2Fwebhook
+2025-10-28 11:24:24 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:24:39 [INFO]: Client disconnected: Mp8NTO8677fDfJ-zAAAB
+2025-10-28 11:24:39 [INFO]: 📤 Sending to QStash: https://qstash.upstash.io/v2/publish/http%3A%2F%2Flocalhost%3A3001%2Fapi%2Fanalytics%2Fwebhook
+2025-10-28 11:24:39 [INFO]: Client disconnected: Mp8NTO8677fDfJ-zAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 11:24:39 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:25:09 [INFO]: Game 0376f7be-97ae-4a9d-bb1a-138cd1815374 forfeited by player c52eea26-1c9f-4d07-a33f-a81c2d9f475f
+2025-10-28 11:25:09 [INFO]: 🏆 Game 0376f7be-97ae-4a9d-bb1a-138cd1815374 won by Bot (defeated manav)
+2025-10-28 11:25:09 [INFO]: 📤 Sending to QStash: https://qstash.upstash.io/v2/publish/http%3A%2F%2Flocalhost%3A3001%2Fapi%2Fanalytics%2Fwebhook
+2025-10-28 11:25:09 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:25:12 [INFO]: Shutting down server...
+2025-10-28 11:25:12 [INFO]: HTTP server closed
+2025-10-28 11:25:12 [INFO]: Database disconnected
+2025-10-28 11:25:12 [INFO]: Kafka producer disconnected
+2025-10-28 11:25:14 [INFO]: Game 0376f7be-97ae-4a9d-bb1a-138cd1815374 deleted
+2025-10-28 11:25:17 [INFO]: Kafka consumer disconnected
+2025-10-28 11:25:17 [INFO]: 🔍 QStash Config Check:
+2025-10-28 11:25:17 [INFO]:    Token: SET ✅
+2025-10-28 11:25:17 [INFO]:    Webhook URL: http://localhost:3001/api/analytics/webhook
+2025-10-28 11:25:17 [INFO]: ✅ QStash analytics enabled
+2025-10-28 11:25:17 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 11:25:17 [INFO]: ✅ Database connected successfully
+2025-10-28 11:25:17 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 11:25:17 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 11:25:17 [INFO]: 🔌 Connecting producer...
+2025-10-28 11:25:17 [INFO]: ✅ Producer connected!
+2025-10-28 11:25:17 [INFO]: 🔌 Connecting admin...
+2025-10-28 11:25:17 [INFO]: ✅ Admin connected!
+2025-10-28 11:25:17 [INFO]: 📋 Listing topics...
+2025-10-28 11:25:17 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 11:25:17 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 11:25:17 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 11:25:17 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 11:25:17 [INFO]: ✅ Analytics consumer started
+2025-10-28 11:25:17 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 11:25:52 [INFO]: Shutting down server...
+2025-10-28 11:25:52 [INFO]: HTTP server closed
+2025-10-28 11:25:52 [INFO]: Database disconnected
+2025-10-28 11:25:52 [INFO]: Kafka producer disconnected
+2025-10-28 11:25:52 [INFO]: Kafka consumer disconnected
+2025-10-28 11:25:53 [INFO]: 🔍 QStash Config Check:
+2025-10-28 11:25:53 [INFO]:    Token: SET ✅
+2025-10-28 11:25:53 [INFO]:    Webhook URL: http://localhost:3001/api/analytics/webhook
+2025-10-28 11:25:53 [INFO]: ✅ QStash analytics enabled
+2025-10-28 11:25:53 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 11:25:53 [INFO]: ✅ Database connected successfully
+2025-10-28 11:25:53 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 11:25:53 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 11:25:53 [INFO]: 🔌 Connecting producer...
+2025-10-28 11:25:53 [INFO]: ✅ Producer connected!
+2025-10-28 11:25:53 [INFO]: 🔌 Connecting admin...
+2025-10-28 11:25:53 [INFO]: ✅ Admin connected!
+2025-10-28 11:25:53 [INFO]: 📋 Listing topics...
+2025-10-28 11:25:53 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 11:25:53 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 11:25:53 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 11:25:53 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 11:25:53 [INFO]: ✅ Analytics consumer started
+2025-10-28 11:25:53 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 11:25:55 [INFO]: New connection: 3yW5K3UtyyLEySSFAAAB from ::1
+2025-10-28 11:25:55 [INFO]: Client connected: 3yW5K3UtyyLEySSFAAAB
+2025-10-28 11:25:55 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 11:25:55 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 11:25:55 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 11:26:05 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 11:26:05 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 11:26:05 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 11:26:05 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 11:26:08 [INFO]: Game created: 60181886-5522-4e3b-b408-fcb5377a1d4c by player manav
+2025-10-28 11:26:08 [INFO]: Player Bot joined game 60181886-5522-4e3b-b408-fcb5377a1d4c
+2025-10-28 11:26:08 [INFO]: ✅ Bot game started: 60181886-5522-4e3b-b408-fcb5377a1d4c - manav vs Bot
+2025-10-28 11:26:08 [INFO]: 📤 Sending to QStash for: http://localhost:3001/api/analytics/webhook
+2025-10-28 11:26:09 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:27:29 [INFO]: Shutting down server...
+2025-10-28 11:27:29 [INFO]: Shutting down server...
+2025-10-28 11:27:29 [INFO]: Database disconnected
+2025-10-28 11:27:29 [INFO]: Database disconnected
+2025-10-28 11:27:29 [INFO]: Kafka producer disconnected
+2025-10-28 11:27:29 [INFO]: Kafka producer disconnected
+2025-10-28 11:27:35 [INFO]: 🔍 QStash Config Check:
+2025-10-28 11:27:35 [INFO]:    Token: SET ✅
+2025-10-28 11:27:35 [INFO]:    Webhook URL: https://hypersuggestible-corrinne-bleatingly.ngrok-free.dev/api/analytics/webhook
+2025-10-28 11:27:35 [INFO]: ✅ QStash analytics enabled
+2025-10-28 11:27:35 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 11:27:35 [INFO]: ✅ Database connected successfully
+2025-10-28 11:27:35 [INFO]: 🔄 Attempting to connect to Kafka...
+2025-10-28 11:27:35 [INFO]: 📍 Kafka broker: localhost:9092
+2025-10-28 11:27:35 [INFO]: 🔌 Connecting producer...
+2025-10-28 11:27:35 [INFO]: ✅ Producer connected!
+2025-10-28 11:27:35 [INFO]: 🔌 Connecting admin...
+2025-10-28 11:27:35 [INFO]: ✅ Admin connected!
+2025-10-28 11:27:35 [INFO]: 📋 Listing topics...
+2025-10-28 11:27:35 [INFO]: 📋 Existing topics: game-analytics, __consumer_offsets
+2025-10-28 11:27:35 [INFO]: ✅ Topic game-analytics already exists
+2025-10-28 11:27:35 [INFO]: ✅ Kafka producer connected successfully
+2025-10-28 11:27:35 [INFO]: ✅ Kafka consumer connected successfully
+2025-10-28 11:27:58 [INFO]: ✅ Analytics consumer started
+2025-10-28 11:27:58 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 11:27:59 [INFO]: New connection: t3HhSh4UvbtDDT1aAAAB from ::1
+2025-10-28 11:27:59 [INFO]: Client connected: t3HhSh4UvbtDDT1aAAAB
+2025-10-28 11:28:02 [INFO]: Client disconnected: t3HhSh4UvbtDDT1aAAAB
+2025-10-28 11:28:02 [INFO]: Client disconnected: t3HhSh4UvbtDDT1aAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 11:28:05 [INFO]: New connection: uHy3A-DWw9NzB2T3AAAD from ::1
+2025-10-28 11:28:05 [INFO]: Client connected: uHy3A-DWw9NzB2T3AAAD
+2025-10-28 11:28:05 [INFO]: ➕ Adding manav to matchmaking queue
+2025-10-28 11:28:05 [INFO]: ⏳ manav waiting for opponent (1 in queue)
+2025-10-28 11:28:05 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 11:28:15 [INFO]: ⏰ Matchmaking timeout for manav - creating bot game
+2025-10-28 11:28:15 [INFO]: 📊 Queue size after timeout: 0
+2025-10-28 11:28:15 [INFO]: 🤖 Creating bot game for manav
+2025-10-28 11:28:15 [INFO]: ✨ Sent "match_found" (vs Bot) to manav
+2025-10-28 11:28:18 [INFO]: Game created: ff141c0d-52f4-4b0b-867b-63f1b218f70e by player manav
+2025-10-28 11:28:18 [INFO]: Player Bot joined game ff141c0d-52f4-4b0b-867b-63f1b218f70e
+2025-10-28 11:28:18 [INFO]: ✅ Bot game started: ff141c0d-52f4-4b0b-867b-63f1b218f70e - manav vs Bot
+2025-10-28 11:28:18 [INFO]: 📤 Sending to QStash for: https://hypersuggestible-corrinne-bleatingly.ngrok-free.dev/api/analytics/webhook
+2025-10-28 11:28:19 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:28:28 [INFO]: Client disconnected: uHy3A-DWw9NzB2T3AAAD
+2025-10-28 11:28:28 [INFO]: 📤 Sending to QStash for: https://hypersuggestible-corrinne-bleatingly.ngrok-free.dev/api/analytics/webhook
+2025-10-28 11:28:28 [INFO]: Client disconnected: uHy3A-DWw9NzB2T3AAAD (anonymous) - Reason: client namespace disconnect
+2025-10-28 11:28:29 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:28:58 [INFO]: Game ff141c0d-52f4-4b0b-867b-63f1b218f70e forfeited by player c52eea26-1c9f-4d07-a33f-a81c2d9f475f
+2025-10-28 11:28:58 [INFO]: 🏆 Game ff141c0d-52f4-4b0b-867b-63f1b218f70e won by Bot (defeated manav)
+2025-10-28 11:28:58 [INFO]: 📤 Sending to QStash for: https://hypersuggestible-corrinne-bleatingly.ngrok-free.dev/api/analytics/webhook
+2025-10-28 11:28:59 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:29:04 [INFO]: Game ff141c0d-52f4-4b0b-867b-63f1b218f70e deleted

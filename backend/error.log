@@ -62,3 +62,10 @@ The table `public.Player` does not exist in the current database.
     at ei.request (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
     at async a (/home/manav/assignment-emitrr/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
     at async LeaderboardController.getLeaderboard (/home/manav/assignment-emitrr/backend/src/controller/leardership.contoller.ts:8:23)
+2025-10-28 11:24:24 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:24:39 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:25:09 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:26:09 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:28:19 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:28:29 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
+2025-10-28 11:28:59 [ERROR]: ❌ QStash publish failed (400): {"error":"invalid destination url: endpoint has invalid scheme, add http:// or https://"}
