@@ -1,4 +1,4 @@
-import { CellValue, GameStatus } from './types';
+import { CellValue, GameStatus } from './types.js';
 
 export class GameModel {
   id: string;
