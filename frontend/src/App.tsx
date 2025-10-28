@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { GameBoard } from './components/GameBoard';
 import { GameInfo } from './components/GameInfo';
 import { Leaderboard } from './components/LeaderBoard';
@@ -14,7 +14,10 @@ function App() {
   const [gameState, setGameState] = useState<GameState | null>(null);
   const [lastMove, setLastMove] = useState<Position | undefined>();
   const [error, setError] = useState<string>('');
-  const [selectedColumn, setSelectedColumn] = useState<number>(3); // Start at center column
+  const [selectedColumn, setSelectedColumn] = useState<number>(3);
+  
+  // 🔒 Prevent double-clicking
+  const isProcessingMove = useRef(false);
 
   useEffect(() => {
     const socket = getSocket();
@@ -36,32 +39,45 @@ function App() {
         .fill(null)
         .map(() => Array(7).fill('empty'));
 
-      const amIPlayer1 = data.currentTurn === 'player1';
+      // ✅ Use playerNumber from backend
+      const myPlayerNumber = data.playerNumber;
+      const isMyTurn = data.currentTurn === myPlayerNumber;
+      
+      console.log(`👤 I am ${myPlayerNumber}, Current turn: ${data.currentTurn}, My turn: ${isMyTurn}`);
       
       setGameState({
         gameId: data.gameId,
         playerId: data.playerId,
+        playerNumber: myPlayerNumber,
         opponent: data.opponent,
         isVsBot: data.isVsBot,
         board,
         currentTurn: data.currentTurn,
-        myTurn: amIPlayer1,
+        myTurn: isMyTurn,
         status: 'active',
         winner: null,
         isDraw: false,
       });
       setAppState('playing');
       setLastMove(undefined);
-      setSelectedColumn(3); // Reset to center
+      setSelectedColumn(3);
+      isProcessingMove.current = false; // Reset lock
     });
 
     socket.on('move_made', (data) => {
+      console.log('📥 Move made:', data);
+      
+      // 🔓 Unlock after move processed
+      isProcessingMove.current = false;
+      
       setGameState((prev) => {
         if (!prev) return null;
 
-        const amIPlayer1 = prev.currentTurn === 'player1' ? prev.myTurn : !prev.myTurn;
-        const nextTurn = data.player === 'player1' ? 'player2' : 'player1';
-        const isMyTurn = amIPlayer1 ? nextTurn === 'player1' : nextTurn === 'player2';
+        // ✅ Use nextTurn from backend
+        const nextTurn = data.nextTurn;
+        const isMyTurn = nextTurn === prev.playerNumber;
+
+        console.log(`🎯 Next turn: ${nextTurn}, My player: ${prev.playerNumber}, My turn: ${isMyTurn}`);
 
         return {
           ...prev,
@@ -74,6 +90,11 @@ function App() {
     });
 
     socket.on('game_over', (data) => {
+      console.log('🏁 Game over:', data);
+      
+      // 🔓 Unlock on game end
+      isProcessingMove.current = false;
+      
       setGameState((prev) => {
         if (!prev) return null;
         return {
@@ -86,9 +107,37 @@ function App() {
       });
     });
 
+    socket.on('opponent_disconnected', () => {
+      setError('Opponent disconnected. Waiting for reconnection...');
+    });
+
+    socket.on('game_rejoined', (data) => {
+      console.log('🔄 Rejoined game:', data);
+      
+      setGameState((prev) => {
+        if (!prev) return null;
+        
+        const myPlayerNumber = data.playerNumber;
+        const isMyTurn = data.currentTurn === myPlayerNumber;
+        
+        return {
+          ...prev,
+          board: data.board,
+          currentTurn: data.currentTurn,
+          myTurn: isMyTurn,
+          playerNumber: myPlayerNumber,
+        };
+      });
+      isProcessingMove.current = false;
+    });
+
     socket.on('error', (data: { message: string }) => {
       console.error('❌ Error from server:', data);
       setError(data.message);
+      
+      // 🔓 Unlock on error
+      isProcessingMove.current = false;
+      
       setTimeout(() => setError(''), 5000);
     });
 
@@ -98,6 +147,8 @@ function App() {
       socket.off('game_found');
       socket.off('move_made');
       socket.off('game_over');
+      socket.off('opponent_disconnected');
+      socket.off('game_rejoined');
       socket.off('error');
     };
   }, []);
@@ -138,14 +189,32 @@ function App() {
   };
 
   const handleColumnClick = (col: number) => {
+    // 🔒 CRITICAL: Prevent double-clicking
+    if (isProcessingMove.current) {
+      console.log('⚠️ Already processing a move, please wait...');
+      return;
+    }
+
     if (!gameState || !gameState.myTurn || gameState.status !== 'active') {
+      console.log('❌ Cannot make move - not your turn or game not active');
       return;
     }
 
     // Check if column is full
     if (gameState.board[0][col] !== 'empty') {
+      console.log('❌ Column is full');
       return;
     }
+
+    // 🔒 Lock moves until server responds
+    isProcessingMove.current = true;
+    console.log(`🎯 Making move at column ${col}, locked=true`);
+
+    // Optimistically disable UI
+    setGameState(prev => {
+      if (!prev) return null;
+      return { ...prev, myTurn: false };
+    });
 
     const socket = getSocket();
     socket.emit('make_move', { gameId: gameState.gameId, column: col });
@@ -156,6 +225,7 @@ function App() {
     setLastMove(undefined);
     setAppState('login');
     setSelectedColumn(3);
+    isProcessingMove.current = false;
     disconnectSocket();
   };
 
@@ -252,13 +322,18 @@ function App() {
               <GameBoard
                 board={gameState.board}
                 onColumnClick={handleColumnClick}
-                disabled={!gameState.myTurn || gameState.status !== 'active'}
+                disabled={!gameState.myTurn || gameState.status !== 'active' || isProcessingMove.current}
                 lastMove={lastMove}
                 selectedColumn={selectedColumn}
               />
-              {gameState.myTurn && gameState.status === 'active' && (
+              {gameState.myTurn && gameState.status === 'active' && !isProcessingMove.current && (
                 <div className="keyboard-hint">
                   Use ← → arrows to move, Enter/Space to drop
+                </div>
+              )}
+              {isProcessingMove.current && (
+                <div className="processing-hint">
+                  Processing move...
                 </div>
               )}
             </div>

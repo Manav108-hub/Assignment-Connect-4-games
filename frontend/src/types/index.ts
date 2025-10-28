@@ -1,4 +1,6 @@
 export type CellValue = 'empty' | 'player1' | 'player2';
+export type PlayerNumber = 'player1' | 'player2';
+export type GameStatus = 'active' | 'finished';
 
 export interface Position {
   row: number;
@@ -8,12 +10,13 @@ export interface Position {
 export interface GameState {
   gameId: string;
   playerId: string;
+  playerNumber: PlayerNumber; // ✅ ADDED: Stores which player we are
   opponent: string;
   isVsBot: boolean;
   board: CellValue[][];
-  currentTurn: 'player1' | 'player2';
+  currentTurn: PlayerNumber;
   myTurn: boolean;
-  status: 'waiting' | 'active' | 'finished';
+  status: GameStatus;
   winner: string | null;
   isDraw: boolean;
 }
@@ -23,5 +26,4 @@ export interface LeaderboardEntry {
   wins: number;
   losses: number;
   draws: number;
-  winRate: string;
 }

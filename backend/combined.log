@@ -641,3 +641,120 @@ The table `public.Player` does not exist in the current database.
 2025-10-28 05:35:56 [INFO]: Shutting down server...
 2025-10-28 05:35:56 [INFO]: HTTP server closed
 2025-10-28 05:35:56 [INFO]: Database disconnected
+2025-10-28 06:32:38 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 06:32:38 [INFO]: ✅ Database connected successfully
+2025-10-28 06:32:38 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 06:32:38 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 06:32:38 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 06:33:12 [INFO]: New connection: apSTmBfXh272GCEgAAAB from ::1
+2025-10-28 06:33:12 [INFO]: Client connected: apSTmBfXh272GCEgAAAB
+2025-10-28 06:33:12 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-28 06:33:12 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 06:33:14 [INFO]: New connection: p7GBG4Er4UZLhQBpAAAD from ::1
+2025-10-28 06:33:14 [INFO]: Client connected: p7GBG4Er4UZLhQBpAAAD
+2025-10-28 06:33:15 [INFO]: ✅ Matched players: manav vs Kira
+2025-10-28 06:33:15 [INFO]: 🎮 Matched: manav vs Kira
+2025-10-28 06:33:16 [INFO]: ➕ Player Kira added to matchmaking queue
+2025-10-28 06:33:16 [INFO]: ⏳ Kira waiting for opponent...
+2025-10-28 06:33:17 [INFO]: Game created: 1bba9fa4-7182-4a17-a373-0711af0b8b7e by player manav
+2025-10-28 06:33:17 [INFO]: Player Kira joined game 1bba9fa4-7182-4a17-a373-0711af0b8b7e
+2025-10-28 06:33:17 [INFO]: ✅ Player1 manav joined room 1bba9fa4-7182-4a17-a373-0711af0b8b7e
+2025-10-28 06:33:17 [INFO]: ✅ Player2 Kira joined room 1bba9fa4-7182-4a17-a373-0711af0b8b7e
+2025-10-28 06:33:17 [INFO]: ✅ PvP game started: 1bba9fa4-7182-4a17-a373-0711af0b8b7e - manav vs Kira
+2025-10-28 06:33:26 [INFO]: ⏰ Timeout reached for Kira, calling bot match callback
+2025-10-28 06:33:26 [INFO]: 🤖 Creating bot game for Kira
+2025-10-28 06:33:26 [INFO]: Game created: 192ecc47-5659-4ce7-8283-e3cb4f9dacb9 by player Kira
+2025-10-28 06:33:26 [INFO]: Player Bot joined game 192ecc47-5659-4ce7-8283-e3cb4f9dacb9
+2025-10-28 06:33:26 [INFO]: ✅ Bot game started: 192ecc47-5659-4ce7-8283-e3cb4f9dacb9 - Kira vs Bot
+2025-10-28 06:33:29 [DEBUG]: Bot choosing center column 3
+2025-10-28 06:33:50 [INFO]: Client disconnected: apSTmBfXh272GCEgAAAB
+2025-10-28 06:33:50 [INFO]: Client disconnected: apSTmBfXh272GCEgAAAB (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:33:53 [INFO]: Client disconnected: p7GBG4Er4UZLhQBpAAAD
+2025-10-28 06:33:53 [INFO]: Client disconnected: p7GBG4Er4UZLhQBpAAAD (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:34:23 [INFO]: Game 1bba9fa4-7182-4a17-a373-0711af0b8b7e forfeited by player bc5fb20d-b5c1-4499-b286-06a01ab6b7cc
+2025-10-28 06:34:23 [INFO]: 🏆 Game 1bba9fa4-7182-4a17-a373-0711af0b8b7e won by manav (defeated Kira)
+2025-10-28 06:34:28 [INFO]: Game 1bba9fa4-7182-4a17-a373-0711af0b8b7e deleted
+2025-10-28 06:39:10 [INFO]: New connection: 1L3ThA2JfUCVsrOMAAAF from ::1
+2025-10-28 06:39:10 [INFO]: Client connected: 1L3ThA2JfUCVsrOMAAAF
+2025-10-28 06:39:10 [INFO]: ➕ Player Kira added to matchmaking queue
+2025-10-28 06:39:10 [INFO]: ⏳ Kira waiting for opponent...
+2025-10-28 06:39:12 [INFO]: New connection: LEWCVaa2G6kUNag5AAAH from ::1
+2025-10-28 06:39:12 [INFO]: Client connected: LEWCVaa2G6kUNag5AAAH
+2025-10-28 06:39:12 [INFO]: ✅ Matched players: Kira vs manav
+2025-10-28 06:39:12 [INFO]: 🎮 Matched: Kira vs manav
+2025-10-28 06:39:14 [INFO]: Game created: 2fc3ca06-01dd-43b1-ac6a-736fabc5cf44 by player Kira
+2025-10-28 06:39:14 [INFO]: Player manav joined game 2fc3ca06-01dd-43b1-ac6a-736fabc5cf44
+2025-10-28 06:39:14 [INFO]: ✅ Player1 Kira joined room 2fc3ca06-01dd-43b1-ac6a-736fabc5cf44
+2025-10-28 06:39:14 [INFO]: ✅ Player2 manav joined room 2fc3ca06-01dd-43b1-ac6a-736fabc5cf44
+2025-10-28 06:39:14 [INFO]: ✅ PvP game started: 2fc3ca06-01dd-43b1-ac6a-736fabc5cf44 - Kira vs manav
+2025-10-28 06:42:33 [INFO]: Shutting down server...
+2025-10-28 06:42:33 [INFO]: Database disconnected
+2025-10-28 06:42:33 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 06:42:33 [INFO]: ✅ Database connected successfully
+2025-10-28 06:42:33 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 06:42:33 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 06:42:33 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      
+2025-10-28 06:42:34 [INFO]: New connection: xnfB8ZUtG1LAOUAlAAAC from ::1
+2025-10-28 06:42:34 [INFO]: Client connected: xnfB8ZUtG1LAOUAlAAAC
+2025-10-28 06:42:34 [INFO]: New connection: mkdiPyopUOf3rvfaAAAD from ::1
+2025-10-28 06:42:34 [INFO]: Client connected: mkdiPyopUOf3rvfaAAAD
+2025-10-28 06:44:52 [INFO]: Client disconnected: mkdiPyopUOf3rvfaAAAD
+2025-10-28 06:44:52 [INFO]: Client disconnected: mkdiPyopUOf3rvfaAAAD (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:44:55 [INFO]: Client disconnected: xnfB8ZUtG1LAOUAlAAAC
+2025-10-28 06:44:55 [INFO]: Client disconnected: xnfB8ZUtG1LAOUAlAAAC (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:47:41 [INFO]: New connection: VxYCeXkWAER6n88ZAAAF from ::1
+2025-10-28 06:47:41 [INFO]: Client connected: VxYCeXkWAER6n88ZAAAF
+2025-10-28 06:47:41 [INFO]: ➕ Player manav added to matchmaking queue
+2025-10-28 06:47:41 [INFO]: ⏳ manav waiting for opponent...
+2025-10-28 06:47:42 [INFO]: New connection: APBX5MLFRcL-drPoAAAH from ::1
+2025-10-28 06:47:42 [INFO]: Client connected: APBX5MLFRcL-drPoAAAH
+2025-10-28 06:47:42 [INFO]: ✅ Matched players: manav vs Kira
+2025-10-28 06:47:42 [INFO]: 🎮 Matched: manav vs Kira
+2025-10-28 06:47:43 [INFO]: ➕ Player Kira added to matchmaking queue
+2025-10-28 06:47:43 [INFO]: ⏳ Kira waiting for opponent...
+2025-10-28 06:47:44 [INFO]: Game created: 1133b72a-6e46-4395-a9cc-49cf8b44b4af by player manav
+2025-10-28 06:47:44 [INFO]: Player Kira joined game 1133b72a-6e46-4395-a9cc-49cf8b44b4af
+2025-10-28 06:47:44 [INFO]: ✅ Player1 manav joined room 1133b72a-6e46-4395-a9cc-49cf8b44b4af
+2025-10-28 06:47:44 [INFO]: ✅ Player2 Kira joined room 1133b72a-6e46-4395-a9cc-49cf8b44b4af
+2025-10-28 06:47:44 [INFO]: ✅ PvP game started: 1133b72a-6e46-4395-a9cc-49cf8b44b4af - manav vs Kira
+2025-10-28 06:47:44 [INFO]: 🎯 First turn: player1
+2025-10-28 06:47:53 [INFO]: ⏰ Timeout reached for Kira, calling bot match callback
+2025-10-28 06:47:53 [INFO]: 🤖 Creating bot game for Kira
+2025-10-28 06:47:53 [INFO]: Game created: 56f768e0-7c70-4ee3-b9d1-04996a87e188 by player Kira
+2025-10-28 06:47:53 [INFO]: Player Bot joined game 56f768e0-7c70-4ee3-b9d1-04996a87e188
+2025-10-28 06:47:53 [INFO]: ✅ Bot game started: 56f768e0-7c70-4ee3-b9d1-04996a87e188 - Kira vs Bot
+2025-10-28 06:48:02 [INFO]: 🎯 manav (player1) making move at column 1
+2025-10-28 06:48:02 [INFO]: ✅ Move successful! Next turn: player2
+2025-10-28 06:49:47 [INFO]: Client disconnected: VxYCeXkWAER6n88ZAAAF
+2025-10-28 06:49:47 [INFO]: Client disconnected: VxYCeXkWAER6n88ZAAAF (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:50:02 [INFO]: Client disconnected: APBX5MLFRcL-drPoAAAH
+2025-10-28 06:50:02 [INFO]: Client disconnected: APBX5MLFRcL-drPoAAAH (anonymous) - Reason: client namespace disconnect
+2025-10-28 06:50:32 [INFO]: Game 1133b72a-6e46-4395-a9cc-49cf8b44b4af forfeited by player bc5fb20d-b5c1-4499-b286-06a01ab6b7cc
+2025-10-28 06:50:32 [INFO]: 🏆 Game 1133b72a-6e46-4395-a9cc-49cf8b44b4af won by manav (defeated Kira)
+2025-10-28 06:50:37 [INFO]: Game 1133b72a-6e46-4395-a9cc-49cf8b44b4af deleted
+2025-10-28 06:52:43 [INFO]: Shutting down server...
+2025-10-28 06:52:43 [INFO]: HTTP server closed
+2025-10-28 06:52:43 [INFO]: Database disconnected
+2025-10-28 06:52:43 [INFO]: ✅ WebSocket connection handler initialized
+2025-10-28 06:52:43 [INFO]: ✅ Database connected successfully
+2025-10-28 06:52:43 [WARN]: ⚠️  Kafka not available - analytics disabled
+2025-10-28 06:52:43 [INFO]: ⚠️  Analytics consumer disabled (Kafka unavailable)
+2025-10-28 06:52:43 [INFO]: 
+╔════════════════════════════════════════╗
+║   🎮 Connect Four Server Started      ║
+║   Port: 3001                      ║
+║   Environment: development          ║
+╚════════════════════════════════════════╝
+      

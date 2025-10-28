@@ -12,6 +12,7 @@ import { Validator } from '../utils/validations';
 
 export class GameHandler {
   private io: Server;
+  private processingMoves: Set<string> = new Set(); // 🔒 Prevent double moves
 
   constructor(io: Server) {
     this.io = io;
@@ -36,151 +37,172 @@ export class GameHandler {
   }
 
   private async handleFindMatch(
-  socket: Socket,
-  data: { username: string }
-): Promise<void> {
-  try {
-    const { username } = data;
+    socket: Socket,
+    data: { username: string }
+  ): Promise<void> {
+    try {
+      const { username } = data;
 
-    // Validate username
-    const usernameValidation = Validator.isValidUsername(username);
-    if (!usernameValidation.valid) {
-      socket.emit('error', { message: usernameValidation.error });
-      return;
-    }
+      // Validate username
+      const usernameValidation = Validator.isValidUsername(username);
+      if (!usernameValidation.valid) {
+        socket.emit('error', { message: usernameValidation.error });
+        return;
+      }
 
-    // Get or create player
-    let player = await prisma.player.findUnique({ where: { username } });
-    if (!player) {
-      player = await prisma.player.create({ data: { username } });
-    }
+      // Get or create player
+      let player = await prisma.player.findUnique({ where: { username } });
+      if (!player) {
+        player = await prisma.player.create({ data: { username } });
+      }
 
-    const playerObj: Player = {
-      id: player.id,
-      username: player.username,
-      socketId: socket.id,
-      isBot: false,
-    };
-
-    // Define bot match callback
-    const handleBotMatch = async (player: Player) => {
-      logger.info(`🤖 Creating bot game for ${player.username}`);
-
-      // Create bot player
-      const bot: Player = {
-        id: uuidv4(),
-        username: 'Bot',
-        socketId: 'bot-' + Date.now(),
-        isBot: true,
+      const playerObj: Player = {
+        id: player.id,
+        username: player.username,
+        socketId: socket.id,
+        isBot: false,
       };
 
-      // Create game with bot
-      const botGame = gameService.createGame(player);
-      gameService.joinGame(botGame.id, bot);
+      // Define bot match callback
+      const handleBotMatch = async (player: Player) => {
+        logger.info(`🤖 Creating bot game for ${player.username}`);
 
-      // Join socket room
-      socket.join(botGame.id);
+        // Create bot player
+        const bot: Player = {
+          id: uuidv4(),
+          username: 'Bot',
+          socketId: 'bot-' + Date.now(),
+          isBot: true,
+        };
 
-      // Determine if player is player1
-      const isPlayer1 = botGame.player1.id === player.id;
+        // Create game with bot
+        const botGame = gameService.createGame(player);
+        gameService.joinGame(botGame.id, bot);
 
-      // Emit game_found to the player
-      socket.emit('game_found', {
-        gameId: botGame.id,
-        playerId: player.id,
-        opponent: 'Bot',
-        isVsBot: true,
-        currentTurn: botGame.currentTurn,
-      });
+        // Join socket room
+        socket.join(botGame.id);
 
-      logger.info(`✅ Bot game emitted to ${player.username}: ${botGame.id}`);
+        // Emit game_found to the player
+        socket.emit('game_found', {
+          gameId: botGame.id,
+          playerId: player.id,
+          opponent: 'Bot',
+          isVsBot: true,
+          currentTurn: botGame.currentTurn,
+          playerNumber: 'player1', // Always player1 vs bot
+        });
 
-      // Send analytics
-      await analyticsService.gameStarted(
-        botGame.id,
-        botGame.player1.username,
-        'Bot',
-        true
-      );
+        logger.info(`✅ Bot game started: ${botGame.id} - ${player.username} vs Bot`);
 
-      // If it's bot's turn, make bot move after a short delay
-      setTimeout(() => {
-        const currentGame = gameService.getGame(botGame.id);
-        if (!currentGame) return;
+        // Send analytics
+        await analyticsService.gameStarted(
+          botGame.id,
+          botGame.player1.username,
+          'Bot',
+          true
+        );
 
-        const isBotTurn = 
-          (isPlayer1 && currentGame.currentTurn === 'player2') ||
-          (!isPlayer1 && currentGame.currentTurn === 'player1');
+        // If it's bot's turn at start (shouldn't happen, but just in case)
+        setTimeout(() => {
+          const currentGame = gameService.getGame(botGame.id);
+          if (!currentGame || currentGame.status !== 'active') return;
 
-        if (isBotTurn) {
-          logger.info(`🤖 Making initial bot move for game ${botGame.id}`);
-          this.makeBotMove(botGame.id);
-        }
-      }, 1000);
-    };
+          // Bot is always player2, so check if it's player2's turn
+          if (currentGame.currentTurn === 'player2') {
+            logger.info(`🤖 Making initial bot move for game ${botGame.id}`);
+            this.makeBotMove(botGame.id);
+          }
+        }, 1000);
+      };
 
-    // Try to match with another player
-    const matchResult = matchmakingService.addPlayerToQueue(playerObj, handleBotMatch);
+      // Try to match with another player
+      const matchResult = matchmakingService.addPlayerToQueue(playerObj, handleBotMatch);
 
-    if (matchResult.type === 'player_match' && matchResult.waitingPlayer) {
-      // PLAYER VS PLAYER MATCH!
-      const player1 = matchResult.waitingPlayer;
-      const player2 = playerObj;
+      if (matchResult.type === 'player_match' && matchResult.waitingPlayer) {
+        // PLAYER VS PLAYER MATCH!
+        const player1 = matchResult.waitingPlayer;
+        const player2 = playerObj;
 
-      // Create game
-      const game = gameService.createGame(player1);
-      gameService.joinGame(game.id, player2);
+        logger.info(`🎮 Matched: ${player1.username} vs ${player2.username}`);
+        
+        // Add 2-second delay for better UX (feels more natural)
+        setTimeout(async () => {
+          // Create game
+          const game = gameService.createGame(player1);
+          gameService.joinGame(game.id, player2);
 
-      // Both players join the room
-      this.io.to(player1.socketId).emit('join_room', game.id);
-      socket.join(game.id);
+          // ✅ FIX: Both players join the socket room
+          const player1Socket = this.io.sockets.sockets.get(player1.socketId);
+          if (player1Socket) {
+            player1Socket.join(game.id);
+            logger.info(`✅ Player1 ${player1.username} joined room ${game.id}`);
+          } else {
+            logger.error(`❌ Could not find socket for player1: ${player1.socketId}`);
+          }
 
-      // Emit to player 1 (who was waiting)
-      this.io.to(player1.socketId).emit('game_found', {
-        gameId: game.id,
-        playerId: player1.id,
-        opponent: player2.username,
-        isVsBot: false,
-        currentTurn: game.currentTurn,
-      });
+          socket.join(game.id);
+          logger.info(`✅ Player2 ${player2.username} joined room ${game.id}`);
 
-      // Emit to player 2 (who just joined)
-      socket.emit('game_found', {
-        gameId: game.id,
-        playerId: player2.id,
-        opponent: player1.username,
-        isVsBot: false,
-        currentTurn: game.currentTurn,
-      });
+          // Emit to player 1 (who was waiting)
+          this.io.to(player1.socketId).emit('game_found', {
+            gameId: game.id,
+            playerId: player1.id,
+            opponent: player2.username,
+            isVsBot: false,
+            currentTurn: game.currentTurn,
+            playerNumber: 'player1',
+          });
 
-      logger.info(`✅ PvP game started: ${game.id} - ${player1.username} vs ${player2.username}`);
+          // Emit to player 2 (who just joined)
+          socket.emit('game_found', {
+            gameId: game.id,
+            playerId: player2.id,
+            opponent: player1.username,
+            isVsBot: false,
+            currentTurn: game.currentTurn,
+            playerNumber: 'player2',
+          });
 
-      // Send analytics
-      await analyticsService.gameStarted(
-        game.id,
-        player1.username,
-        player2.username,
-        false
-      );
+          logger.info(`✅ PvP game started: ${game.id} - ${player1.username} vs ${player2.username}`);
+          logger.info(`🎯 First turn: ${game.currentTurn}`);
 
-    } else if (matchResult.type === 'waiting') {
-      // Waiting for opponent or bot
-      socket.emit('waiting_for_opponent');
-      logger.info(`⏳ ${username} waiting for opponent...`);
+          // Send analytics
+          await analyticsService.gameStarted(
+            game.id,
+            player1.username,
+            player2.username,
+            false
+          );
+        }, 2000); // 2-second delay for matchmaking feel
+
+      } else if (matchResult.type === 'waiting') {
+        // Waiting for opponent or bot
+        socket.emit('waiting_for_opponent');
+        logger.info(`⏳ ${username} waiting for opponent...`);
+      }
+    } catch (error) {
+      logger.error('Error in handleFindMatch:', error);
+      socket.emit('error', { message: 'Failed to find match' });
     }
-  } catch (error) {
-    logger.error('Error in handleFindMatch:', error);
-    socket.emit('error', { message: 'Failed to find match' });
   }
-}
 
   private async handleMakeMove(
     socket: Socket,
     data: { gameId: string; column: number }
   ): Promise<void> {
-    try {
-      const { gameId, column } = data;
+    const { gameId, column } = data;
+    
+    // 🔒 Prevent concurrent moves on same game
+    const lockKey = `${gameId}-move`;
+    if (this.processingMoves.has(lockKey)) {
+      logger.warn(`⚠️ Move already being processed for game ${gameId}`);
+      socket.emit('error', { message: 'Please wait, processing previous move' });
+      return;
+    }
 
+    this.processingMoves.add(lockKey);
+
+    try {
       // Validate column
       const columnValidation = Validator.isValidColumn(column);
       if (!columnValidation.valid) {
@@ -202,13 +224,35 @@ export class GameHandler {
         return;
       }
 
-      const player =
-        game.player1.socketId === socket.id ? game.player1 : game.player2;
+      if (game.status !== 'active') {
+        socket.emit('error', { message: 'Game is not active' });
+        return;
+      }
+
+      // Find which player is making the move
+      const player = game.player1.socketId === socket.id 
+        ? game.player1 
+        : game.player2?.socketId === socket.id 
+        ? game.player2 
+        : null;
 
       if (!player) {
         socket.emit('error', { message: 'Player not found in game' });
         return;
       }
+
+      // 🔒 CRITICAL: Check if it's this player's turn
+      const playerNumber = game.player1.id === player.id ? 'player1' : 'player2';
+      if (game.currentTurn !== playerNumber) {
+        logger.warn(`❌ Not ${player.username}'s turn. Current turn: ${game.currentTurn}, Player: ${playerNumber}`);
+        socket.emit('error', { message: 'Not your turn!' });
+        return;
+      }
+
+      logger.info(`🎯 ${player.username} (${playerNumber}) making move at column ${column}`);
+
+      // Determine who made the move BEFORE turn switches
+      const playerWhoMoved = playerNumber;
 
       const result = gameService.makeMove(gameId, player.id, column);
 
@@ -217,10 +261,13 @@ export class GameHandler {
         return;
       }
 
-      // Emit move to both players
+      logger.info(`✅ Move successful! Next turn: ${game.currentTurn}`);
+
+      // ✅ Emit to ALL players in the room
       this.io.to(gameId).emit('move_made', {
         position: result.position,
-        player: game.currentTurn === 'player1' ? 'player2' : 'player1',
+        player: playerWhoMoved,
+        nextTurn: game.currentTurn,
         board: game.board,
       });
 
@@ -239,6 +286,9 @@ export class GameHandler {
     } catch (error) {
       logger.error('Error in handleMakeMove:', error);
       socket.emit('error', { message: 'Failed to make move' });
+    } finally {
+      // 🔓 Release lock after processing
+      this.processingMoves.delete(lockKey);
     }
   }
 
@@ -250,7 +300,16 @@ export class GameHandler {
     if (!bot) return;
 
     const botPiece = bot.id === game.player1.id ? 'player1' : 'player2';
+    
+    // Check if it's actually bot's turn
+    if (game.currentTurn !== botPiece) {
+      logger.warn(`⚠️ Tried to make bot move but it's not bot's turn. Current: ${game.currentTurn}`);
+      return;
+    }
+
     const column = botService.getBestMove(game.board, botPiece);
+
+    logger.info(`🤖 Bot making move at column ${column}`);
 
     const result = gameService.makeMove(gameId, bot.id, column);
 
@@ -258,6 +317,7 @@ export class GameHandler {
       this.io.to(gameId).emit('move_made', {
         position: result.position,
         player: botPiece,
+        nextTurn: game.currentTurn,
         board: game.board,
       });
 
@@ -270,105 +330,104 @@ export class GameHandler {
   }
 
   private async handleGameEnd(
-  game: any,
-  winnerId?: string,
-  isDraw?: boolean
-): Promise<void> {
-  try {
-    const duration = Math.floor(
-      (new Date().getTime() - game.createdAt.getTime()) / 1000
-    );
+    game: any,
+    winnerId?: string,
+    isDraw?: boolean
+  ): Promise<void> {
+    try {
+      const duration = Math.floor(
+        (new Date().getTime() - game.createdAt.getTime()) / 1000
+      );
 
-    // --- 🎯 Update Player Stats ---
-    if (isDraw) {
-      // Draw for Player 1
-      await prisma.player.updateMany({
-        where: { id: game.player1.id },
-        data: { draws: { increment: 1 } },
-      });
-
-      // Draw for Player 2 (only if exists and not a bot)
-      if (game.player2 && !game.player2.isBot) {
+      // --- 🎯 Update Player Stats ---
+      if (isDraw) {
+        // Draw for Player 1
         await prisma.player.updateMany({
-          where: { id: game.player2.id },
+          where: { id: game.player1.id },
           data: { draws: { increment: 1 } },
         });
+
+        // Draw for Player 2 (only if exists and not a bot)
+        if (game.player2 && !game.player2.isBot) {
+          await prisma.player.updateMany({
+            where: { id: game.player2.id },
+            data: { draws: { increment: 1 } },
+          });
+        }
+
+        logger.info(
+          `🤝 Game ${game.id} ended in a draw between ${game.player1.username} and ${game.player2?.username || "Bot"}`
+        );
+      } else if (winnerId) {
+        // Determine the loser
+        const loserId =
+          winnerId === game.player1.id ? game.player2?.id : game.player1.id;
+
+        // Get winner and loser objects for easier reference
+        const winner =
+          game.player1.id === winnerId ? game.player1 : game.player2;
+        const loser =
+          game.player1.id === loserId ? game.player1 : game.player2;
+
+        // Update winner stats (skip bot)
+        if (winner && !winner.isBot) {
+          await prisma.player.updateMany({
+            where: { id: winner.id },
+            data: { wins: { increment: 1 } },
+          });
+        }
+
+        // Update loser stats (skip bot)
+        if (loser && !loser.isBot && loserId && loserId !== winnerId) {
+          await prisma.player.updateMany({
+            where: { id: loser.id },
+            data: { losses: { increment: 1 } },
+          });
+        }
+
+        logger.info(
+          `🏆 Game ${game.id} won by ${winner?.username || "Bot"}${
+            loser?.username ? ` (defeated ${loser.username})` : ""
+          }`
+        );
       }
 
-      logger.info(
-        `🤝 Game ${game.id} ended in a draw between ${game.player1.username} and ${game.player2?.username || "Bot"}`
-      );
-    } else if (winnerId) {
-      // Determine the loser
-      const loserId =
-        winnerId === game.player1.id ? game.player2?.id : game.player1.id;
+      // --- 💾 Save Game Record in Database ---
+      await prisma.game.create({
+        data: {
+          id: game.id,
+          player1Id: game.player1.id,
+          player2Id: game.player2?.id || game.player1.id,
+          winnerId: winnerId || null,
+          status: "completed",
+          board: JSON.stringify(game.board),
+          duration,
+          isVsBot: game.player2?.isBot || false,
+          completedAt: new Date(),
+        },
+      });
 
-      // Get winner and loser objects for easier reference
-      const winner =
-        game.player1.id === winnerId ? game.player1 : game.player2;
-      const loser =
-        game.player1.id === loserId ? game.player1 : game.player2;
+      // --- 📢 Emit Game Over Event ---
+      this.io.to(game.id).emit("game_over", {
+        winner: winnerId,
+        isDraw,
+        board: game.board,
+      });
 
-      // Update winner stats (skip bot)
-      if (winner && !winner.isBot) {
-        await prisma.player.updateMany({
-          where: { id: winner.id },
-          data: { wins: { increment: 1 } },
-        });
-      }
-
-      // Update loser stats (skip bot)
-      if (loser && !loser.isBot && loserId && loserId !== winnerId) {
-        await prisma.player.updateMany({
-          where: { id: loser.id },
-          data: { losses: { increment: 1 } },
-        });
-      }
-
-      logger.info(
-        `🏆 Game ${game.id} won by ${winner?.username || "Bot"}${
-          loser?.username ? ` (defeated ${loser.username})` : ""
-        }`
-      );
-    }
-
-    // --- 💾 Save Game Record in Database ---
-    await prisma.game.create({
-      data: {
-        id: game.id,
-        player1Id: game.player1.id,
-        player2Id: game.player2?.id || game.player1.id,
-        winnerId: winnerId || null,
-        status: "completed",
-        board: JSON.stringify(game.board),
+      // --- 📊 Analytics ---
+      await analyticsService.gameEnded(
+        game.id,
+        winnerId || undefined,
         duration,
-        isVsBot: game.player2?.isBot || false,
-        completedAt: new Date(),
-      },
-    });
+        game.player2?.isBot || false
+      );
 
-    // --- 📢 Emit Game Over Event ---
-    this.io.to(game.id).emit("game_over", {
-      winner: winnerId,
-      isDraw,
-      board: game.board,
-    });
-
-    // --- 📊 Analytics ---
-    await analyticsService.gameEnded(
-      game.id,
-      winnerId || undefined,
-      duration,
-      game.player2?.isBot || false
-    );
-
-    // --- 🧹 Cleanup ---
-    setTimeout(() => gameService.deleteGame(game.id), 5000);
-  } catch (error) {
-    logger.error(`❌ Error in handleGameEnd for game ${game.id}:`, error);
+      // --- 🧹 Cleanup ---
+      setTimeout(() => gameService.deleteGame(game.id), 5000);
+    } catch (error) {
+      logger.error(`❌ Error in handleGameEnd for game ${game.id}:`, error);
+    }
   }
-}
-
 
   private async handleRejoinGame(
     socket: Socket,
@@ -405,11 +464,14 @@ export class GameHandler {
 
       gameService.clearDisconnected(gameId);
 
+      const playerNumber = player.id === game.player1.id ? 'player1' : 'player2';
+
       socket.emit('game_rejoined', {
         gameId: game.id,
         board: game.board,
         currentTurn: game.currentTurn,
         opponent: player.id === game.player1.id ? game.player2?.username : game.player1.username,
+        playerNumber,
       });
 
       await analyticsService.playerReconnected(gameId, playerId);
