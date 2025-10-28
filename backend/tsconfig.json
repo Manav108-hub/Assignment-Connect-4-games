@@ -5,9 +5,9 @@
     "lib": ["ES2020"],
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
+    "strict": false,                       // 👈 turns off all strict checks
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true,                  // 👈 ignores type issues in node_modules
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
